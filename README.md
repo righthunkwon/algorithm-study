@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=soft&color=3b90e2&height=200&section=header&text=삼성%20청년%20SW아카데미&fontSize=60&animation=scaleIn)
+![header](https://capsule-render.vercel.app/api?type=soft&color=#03c75a&height=200&section=header&text=삼성%20청년%20SW아카데미&fontSize=60&animation=scaleIn)
 
 
 

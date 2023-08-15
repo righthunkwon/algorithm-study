@@ -69,8 +69,7 @@
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
 ##### righthunkwon
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
-##### righthunkwon
-[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
+
  
 <br/>
 
@@ -87,8 +86,8 @@
 
 ## 📌 스터디 규칙
 - 스터디 참여가 어려우면 전날까지 전달한다.
-- 스터디 미통보 후 미참여 시 벌금은 5,000원이다.
-- 매주 풀지 못한 문제가 있다면 못 푼 문제당 벌금은 2,000원이다.
+- 스터디 미통보 후 미참여 시 벌금은 5,000원!!!
+- 매주 풀지 못한 문제가 있다면 못 푼 문제당 벌금은 2,000원!!!
 
 <br/>
 

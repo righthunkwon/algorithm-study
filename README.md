@@ -1,9 +1,7 @@
-![header](https://capsule-render.vercel.app/api?type=soft&color=#3B90E2&height=200&section=header&text=삼성%20청년%20SW아카데미&fontSize=60&animation=scaleIn)
+![header](https://capsule-render.vercel.app/api?type=soft&color=3b90e2&height=200&section=header&text=삼성%20청년%20SW아카데미&fontSize=60&animation=scaleIn)
 
 
-<a href="https://www.notion.so/hyokikomori/Algorithm-Study-eeab1b7059824f96b2733d6bc7218428?pvs=4">
-<img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-flat&amp;logo=notion&amp;logoColor=white" alt="Notion">
-</a>
+
 
 # 🖥 싸피 서울 6반 알고리즘 스터디
 

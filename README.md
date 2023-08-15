@@ -1,7 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=soft&color=#03c75a&height=200&section=header&text=삼성%20청년%20SW아카데미&fontSize=60&animation=scaleIn)
-
-
-
+<br />
 
 # 🖥 싸피 서울 6반 알고리즘 스터디
 

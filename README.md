@@ -7,7 +7,7 @@
 <table>
   <tr>
     <td>진행 기간</td>
-    <td><s>2023년 8월 10일 ~ ing </td>
+    <td>2023년 8월 10일 ~ ing</td>
   </tr>
   <tr>
     <td>스터디 장소</td>
@@ -50,10 +50,10 @@
   </tr>
   <tr> 
     <td align="center"><img src="https://img.shields.io/badge/Java-007396.svg?&style=for-the-badge&logo=Java&logoColor=white"></td>
-    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"><br/><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></td>
-    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"><br/><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></td>
-    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"><br/><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></td>
-    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"><br/><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></td>
+    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"></td>
+    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"></td>
+    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"></td>
+    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"></td>
   </tr> 
 </table>
 
@@ -65,6 +65,8 @@
 - 난이도는 BOJ 브론즈 2부터 실버 1까지 구성한다(추후 변경).
 - 스터디는 난이도 별로 쉬운 문제부터 한 사람당 20분씩 시간을 배정한다.
 - 10분은 발표자의 발표, 10분은 스터디원들의 코드 리뷰로 구성한다.
+
+<br/>
 - 스터디 참여가 어려우면 전날까지 말하면 되고, 미통보시 벌금은 5,000원이다.
 - 매주 풀지 못한 문제가 있다면 못 푼 문제당 벌금은 2,000원이다.
 - 매주 풀 문제는 목요일 저녁까지 mm에 올린다.

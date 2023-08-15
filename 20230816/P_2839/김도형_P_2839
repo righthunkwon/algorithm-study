@@ -1,0 +1,40 @@
+Q2839_설탕배달
+
+//import java.util.Arrays;
+import java.util.Scanner;
+
+public class Q2839_sugar_delivery {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		
+//		int [][]arr = new int[(N/3)+1][(N/5)+1];  //필요X
+	
+		int min = 1667; //n의 최소값 초기화 
+				
+		for(int i=0;3*i<=N;i++) {        // 3의 배수 0 3 6 9 12 ...
+			for(int j=(N/5)+1;j>=0;j--) {   // 
+				
+				if((5*j)+(3*i)==N) {
+//					System.out.println("3의개수"+i);
+//					System.out.println("5의개수"+j);
+					if(min>i+j) {
+						min=i+j;
+					}
+				}else continue;
+				
+			}
+		}
+			
+		if(min==1667) {
+			System.out.println(-1);
+		}else {
+			System.out.println(min);
+		}
+	
+	}
+
+}

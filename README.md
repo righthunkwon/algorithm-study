@@ -1,6 +1,7 @@
 <br />
 
 # 🖥 싸피 서울 6반 알고리즘 스터디
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Frighthunkwon&count_bg=%2300AA54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 <table>
   <tr>
@@ -47,7 +48,7 @@
     <td align="center"><a href="https://github.com/Gwonwoo-Nam"><b>닉네임</b></a></td>
   </tr>
   <tr> 
-    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
+    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /><br />[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)</td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>

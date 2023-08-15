@@ -24,7 +24,7 @@
   <tr>
     <td>언어</td>
     <td>
-      <img src="https://img.shields.io/badge/Java-007396.svg?&style=for-the-badge&logo=Java&logoColor=white">   
+      <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" />   
     </td>
   </tr>
 </table>

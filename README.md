@@ -7,7 +7,7 @@
 <table>
   <tr>
     <td>진행 기간</td>
-    <td>2023년 8월 10일 ~ ing</td>
+    <td> 2023년 8월 10일 ~ ing </td>
   </tr>
   <tr>
     <td>스터디 장소</td>

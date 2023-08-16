@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
-//12788번
+
 public class Problem_12788 {
     public static void main(String[] args) throws Exception {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
@@ -16,15 +16,15 @@ public class Problem_12788 {
         }
 
         Collections.sort(list);
-        int total = M * K;// 100개 필요
+        int total = M * K;// total개 필요
         int i = list.size();
         boolean isdone=true;
-        while(isdone&&i>0) {
+        while(isdone&&i>0) {//index가 1까지여야 i--
             i--;
             total-=list.get(i);
-            if(total<=0) isdone=false;
+            if(total<=0) isdone=false;//음수이거나 0이면 종료후 원래 사이즈에서 현재 i만큼 빼면 빌린 수 
         }
-        if(total>0)System.out.println("STRESS");
+        if(total>0)System.out.println("STRESS");//list.size가 0인데도 구해야하는 펜의 수가 양수=> 부족함
         else {
             System.out.println(list.size()-i);
         }

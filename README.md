@@ -35,17 +35,17 @@
 <table>
  <tr>
     <td align="center"><a href="https://github.com/righthunkwon"><img src="https://avatars.githubusercontent.com/u/114549688?v=4" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/HyowonSin"><img src="https://avatars.githubusercontent.com/HyowonSin" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/jaea-kim"><img src="https://avatars.githubusercontent.com/jaea-kim" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/JeonHyoChang"><img src="https://avatars.githubusercontent.com/JeonHyoChang" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/Gwonwoo-Nam"><img src="https://avatars.githubusercontent.com/Gwonwoo-Nam" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/ehgud619"><img src="https://avatars.githubusercontent.com/u/139290855?v=4" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/slside"><img src="https://avatars.githubusercontent.com/u/132821972?v=4" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/hajaeryul"><img src="https://avatars.githubusercontent.com/u/113097210?v=4" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/jungyounn"><img src="https://avatars.githubusercontent.com/u/141210401?v=4" width="130px;" alt=""></a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/righthunkwon"><b>righthunkwon</b></a></td>
-    <td align="center"><a href="https://github.com/HyowonSin"><b>닉네임</b></a></td>
-    <td align="center"><a href="https://github.com/jaea-kim"><b>닉네임</b></a></td>
-    <td align="center"><a href="https://github.com/JeonHyoChang"><b>닉네임</b></a></td>
-    <td align="center"><a href="https://github.com/Gwonwoo-Nam"><b>닉네임</b></a></td>
+    <td align="center"><a href="https://github.com/ehgud619"><b>ehgud619</b></a></td>
+    <td align="center"><a href="https://github.com/slside"><b>slside</b></a></td>
+    <td align="center"><a href="https://github.com/hajaeryul"><b>hajaeryul</b></a></td>
+    <td align="center"><a href="https://github.com/jungyounn"><b>jungyounn</b></a></td>
   </tr>
   <tr> 
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
@@ -61,13 +61,13 @@
 ## 🏆 멤버 랭킹
 ##### righthunkwon
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
-#### righthunkwon
+#### ehgud619
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
-##### righthunkwon
+##### slside
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
-##### righthunkwon
+##### hajaeryul
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
-##### righthunkwon
+##### jungyounn
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
 
  

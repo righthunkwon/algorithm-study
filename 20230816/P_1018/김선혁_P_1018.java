@@ -1,37 +1,133 @@
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-
+		//체스판 다시 칠하기 
+		// 1018번   https://www.acmicpc.net/problem/1018
+		// 무조건 체스판 8X8로 만들기
+		// ==> N과 M은 무조건 8이상이며
+		// 직사각형 상태의 체스판에서 8X8로 자른 상태
+		// 이상태에서 다시 칠해야 하는 블럭이 최소한으로 되야함
+		
+		// 일단 다 자른후에 기준을 잡아보면
+		// 첫줄 짝수블록 B면 홀수블록은 W
+		// 두번째줄은 짝수블록 W 홀수블록 B가 되어야함
 		Scanner sc = new Scanner(System.in);
-		int T = sc.nextInt();			
-		for(int t=1;t<=T;t++) {
-		int	N = sc.nextInt();
-		int[][] rank = new int[N][2];
-		for(int i=0;i<N;i++) {
-			rank[i][0] = sc.nextInt();
-			rank[i][1] = sc.nextInt();
+		int	N = sc.nextInt(); 	// 세로길이 입력
+		int M = sc.nextInt();	// 가로길이 입력
+		
+		String[][] arr = new String[N][M]; // 입력배열 생성
+		for(int i=0;i<N;i++) { // 입력값들이 공백이 없기떄문에
+			String tmp = sc.next(); // 한줄씩 입력한 후에
+			for(int j=0;j<M;j++) { // 그줄은 한글짜씩 짤라서
+				arr[i][j] = tmp.substring(j,j+1); // 하나씩 대입
+			}
 		}
-			
-		Arrays.sort(rank, new Comparator<int[]>() {
-
-			@Override
-			public int compare(int[] o1, int[] o2) {
-				// TODO Auto-generated method stub
-				return o1[0] - o2[0];
-			}			
-		});
-		// 정렬완료
-		for(int i =0;i<N;i++) {
-			System.out.print(rank[i][0]+" ");
-			System.out.println(rank[i][1]);
-		}
+		
+		int cnt =0; // 바꿔야할 개수
+		int min = 10000; // 최소값 대략 잡음
+		
+		// 내가 풀방법은 기준이 되는 블록 하나를 선정후에
+		// 가로로 8, 세로로 8 플러스된 지점까지 확인
+		// ==> 기준이 되는 블록은 0부터 시작해서 N과 M에서 최대점의 -8까지 
+				
+		for(int i=0;i<=N-8;i++) { //세로
+			for(int j=0;j<=M-8;j++) { //가로
+				cnt=0; // 개수는 0으로 초기화
+				// 기준점을 잡았으니 이제
+				// 가로 세로 각 8블록씩 확인해야함				
+				for(int k=0;k<8;k++) { //세로					
+					// 가로의 경우 한블록을 뛰어넘어
+					// 색이 다르기 때문에
+					// for문의 증감은 2로잡고
+					// j와 j+1 두가지 경우를 if문 내에 넣어준다.
+					// 세로도 마찬가지로 한칸이 내려가면 색이 다르기 때문에
+					// if문을 통해 i의 위치가 짝수일 때, 홀수일 때를 
+					// 나누어 계산해야한다.
+					for(int l=0;l<8;l+=2) {
+						// i(열)가 짝수일때
+						if((i+k)%2==0) { 
+							// 기준점으로부터 W
+							if(arr[i+k][j+l].equals("W")){
+								cnt++;
+							}
+							// 기준점 +1의 위치가 B일때
+							if(arr[i+k][j+l+1].equals("B")) {
+								cnt++;
+							}
+						}
+						// i가 홀수 일때
+						else {
+							//위와 반대의 색을 가져야함
+							if(arr[i+k][j+l].equals("B")){
+								cnt++;
+							}
+							if(arr[i+k][j+l+1].equals("W")) {
+								cnt++;
+							}
+						}
+					}
+				}		
+				// 기준점을 W로 잡았지만 기준점이 B일 경우
+				// 개수가 더 적을 수 있기 떄문에
+				// 전체 8X8인 64개의 블록에서 
+				// 개수가 32개 이상(절반이상)이라면 
+				// 반대의 색을 하는게 더 유리하기 때문에
+				// 64-cnt를 진행하여 준다.
+				if(cnt>32) {
+					cnt=64-cnt;
+				}
+				// 최소값이 방금 기준점으로 잡은 위치보다
+				// 더 클경우에는 방금 구한 개수를 
+				// min값에 넣어준다.
+				if(min>cnt) {
+					min =cnt;
+				}
+				
+				
+			} // 가로 j for문종료
+		} // 세로 i for문 종료
+		System.out.println(min);
 		
 		
 		
-		}
 		
 	}
 }
+
+//
+//
+// 브루트포스 알고리즘 이란 ?????????????????????????????????????????
+//
+// 브루트포스 : 거창한 이름에 비해서 되게 단순한 알고리즘이다. 
+// 모든 경우의 수를 체크해서 답을 결정짓는다고 해서 난폭한 힘, 
+// 브루트포스라고 불리는 이 알고리즘은 복잡한 알고리즘 구조를 몰라도 
+// 문제의 답을 추출해낼 수 있는 방법이 된다.
+
+// ==>  우선 브루트포스는 모든 경우의 수를 체크하는 방법이기 때문에 
+// 정확도 100퍼센트를 자랑한다고 할 수 있음 ==> 쉽게 접근 가능
+//
+// --단점 : 그것은 경우의 수가 많아질수록 시간복잡도가 엄청나게 높아짐 --> 백준의 경우 시간초과​
+//[출처] 알고리즘 정리 02. 브루트포스|작성자 wpqlks7
+//
+
+
+
+
+
+
+
+
+//========> 완전탐색
+
+
+
+
+
+
+
+
+
+
+
+

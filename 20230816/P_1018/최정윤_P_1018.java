@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.StringTokenizer;
-
+//1018
 public class Problem_1018 {
     public static void main(String[] args) throws Exception {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

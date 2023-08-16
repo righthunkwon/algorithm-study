@@ -14,7 +14,7 @@ public class Main {
 			rightArr[i] = i + 1;
 		}
 		Arrays.sort(wantArr);
-		long sum=0;
+		long sum=0; //N은 500000까지이고 모두가 500000이라고 예상등수를 적었을 때 int 범위 초과
 		for(int i=0;i<N;i++) {
 			sum+=Math.abs(wantArr[i]-rightArr[i]);
 		}

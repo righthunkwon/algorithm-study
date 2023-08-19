@@ -62,7 +62,7 @@
 ##### righthunkwon
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
 #### ehgud619
-[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
+[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehgud619)](https://solved.ac/ehgud619)
 ##### slside
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
 ##### hajaeryul

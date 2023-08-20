@@ -64,11 +64,11 @@
 #### ehgud619
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehgud619)](https://solved.ac/ehgud619)
 ##### slside
-[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=kkn1312)](https://solved.ac/dhtmxk8134)
+[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=kkn1312)](https://solved.ac/kkn1312)
 ##### hajaeryul
-[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=wofbf2)](https://solved.ac/dhtmxk8134)
+[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=wofbf2)](https://solved.ac/wofbf2)
 ##### jungyounn
-[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
+[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=janet1015 )](https://solved.ac/janet1015 )
 
  
 <br/>

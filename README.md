@@ -43,8 +43,8 @@
   <tr>
     <td align="center"><a href="https://github.com/righthunkwon"><b>righthunkwon</b></a></td>
     <td align="center"><a href="https://github.com/ehgud619"><b>ehgud619</b></a></td>
-    <td align="center"><a href="https://github.com/kkn1312"><b>slside</b></a></td>
-    <td align="center"><a href="https://github.com/wofbf2"><b>hajaeryul</b></a></td>
+    <td align="center"><a href="https://github.com/slside"><b>slside</b></a></td>
+    <td align="center"><a href="https://github.com/hajaeryul"><b>hajaeryul</b></a></td>
     <td align="center"><a href="https://github.com/jungyounn"><b>jungyounn</b></a></td>
   </tr>
   <tr> 
@@ -64,9 +64,9 @@
 #### ehgud619
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ehgud619)](https://solved.ac/ehgud619)
 ##### slside
-[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
+[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=kkn1312)](https://solved.ac/dhtmxk8134)
 ##### hajaeryul
-[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
+[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=wofbf2)](https://solved.ac/dhtmxk8134)
 ##### jungyounn
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=dhtmxk8134)](https://solved.ac/dhtmxk8134)
 

@@ -43,8 +43,8 @@
   <tr>
     <td align="center"><a href="https://github.com/righthunkwon"><b>righthunkwon</b></a></td>
     <td align="center"><a href="https://github.com/ehgud619"><b>ehgud619</b></a></td>
-    <td align="center"><a href="https://github.com/slside"><b>slside</b></a></td>
-    <td align="center"><a href="https://github.com/hajaeryul"><b>hajaeryul</b></a></td>
+    <td align="center"><a href="https://github.com/kkn1312"><b>slside</b></a></td>
+    <td align="center"><a href="https://github.com/wofbf2"><b>hajaeryul</b></a></td>
     <td align="center"><a href="https://github.com/jungyounn"><b>jungyounn</b></a></td>
   </tr>
   <tr> 

@@ -3,7 +3,13 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
+		// 수학은 비대면강의 입니다. 19532번 브론즈2
+		// 연립방정식 푸는거 -- 수학시간에 많이했음
+		//	ax+by=c 
+		//	dx+ey=f
+		// 저는 a와 d를 맞춘후에
+		// 위에항에서 밑에항을 빼겠습니다.
+		
 		// 6개 입력받아서 a랑 d 맞춰주기
 		int a = sc.nextInt(); // a 입력받기
 		int b = sc.nextInt(); // b 입력받기
@@ -21,8 +27,6 @@ public class Main {
 			ans1 = f/e;
 			ans2 = (c-ans1*b)/a;
 		}
-		// 두개다 0일경우에는 x의 값이 유일하지 않기 때문에 
-		// 0인 경우는 가능하다면 a와 d중에 하나일 수 밖에 없다
 		else { //a와 d를 맞춰준 후에 나머지 항의 차이를 통해 y를 먼저 구함
 			int tmp = a; // a에 d를 곱하면 a가 변하기때문에
 			// a를 임시변수 tmp에 저장하여줌

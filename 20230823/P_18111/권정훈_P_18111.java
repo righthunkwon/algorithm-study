@@ -14,6 +14,11 @@ public class P_18111 {
 		int m = Integer.parseInt(st.nextToken()); // 가로(열)
 		int b = Integer.parseInt(st.nextToken()); // 작업 시작 시 블록
 
+		// 맞춰지는 땅의 높이: 1 or 2 or 3
+		// 3 2 1
+		// 1 2 3
+		// 1 3 3
+		
 		// (1) 배열 요소 입력
 		// 블록의 최소 높이와 최대 높이를 찾아 이 범위를 완전 탐색하여 최소시간, 최대높이를 출력
 		int max = 0;
@@ -51,15 +56,16 @@ public class P_18111 {
 					}
 				}
 			}
-
+			
+			// 블록의 경우마다 비교 후 최소시간과 최소시간에 따른 최대높이를 갱신
 			if (inventory >= 0) {
 				if (seconds <= mintime) {
 					mintime = seconds;
 					maxheight = i;
 				}
 			}
-
-		}
+			
+		}// 블록 반복문
 		System.out.println(mintime + " " + maxheight);
 	}
 

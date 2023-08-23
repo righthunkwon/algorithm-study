@@ -1,7 +1,13 @@
-
+package back;
 import java.io.*;
 import java.util.*;
-
+//문제 해석 및 접근 : 집중국이 1개라면 센서를 위치 순서대로 sort한 뒤 처음부터 끝까지의 길이를 나타낸다
+				//(어느 위치에 해도 오른쪽 왼쪽 값 더해야하기 때문)
+          		//집중국이 2개라면 2개로 나누어서 선을 이어도 된다라는 뜻이기 때문에 
+				//처음부터 끝까지 중 센서사이끼리의 거리 1개 빼준 값이다.
+          		//집중국이 K개라면 센서 사이의 거리 K-1개 빼준값이다.
+				//최솟값이기 위해서는 거리사이 차이가 가장 많이 나는 것을 빼주어야한다.
+				//센서보다 집중국 수가 많거나 같으면 0을 출력
 public class Problem_2212 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

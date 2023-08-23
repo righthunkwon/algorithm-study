@@ -92,3 +92,36 @@ public class Q11729_하노이_탑 {
 	}
 
 }// class
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@지헌's 코드@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+package algostudy;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.Scanner;
+
+public class Q11729_지헌code {
+    private static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    public static void main(String[] args) throws IOException{
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        bw.write(String.valueOf(((int)Math.pow(2, N)-1))+"\n");
+        hanoi(N,1,3);
+        bw.close();
+    }
+
+    private static void hanoi(int t, int s, int e) throws IOException { //t : 옮길 숫자 , s : 출발 위치, e : 도착 위치
+        if(t==1) {
+            bw.write(String.valueOf(s)+" "+String.valueOf(e)+"\n");
+            return;
+        }
+        hanoi(t-1,s,6-s-e); //6-s-e : 출발위치와 도착위치말고 나머지 지점
+        bw.write(String.valueOf(s)+" "+String.valueOf(e)+"\n");
+        hanoi(t-1,6-s-e,e);
+    }
+}

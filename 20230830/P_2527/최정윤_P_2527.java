@@ -7,22 +7,22 @@ public class Main {
 		StringTokenizer st;
 		for (int tc = 1; tc <= 4; tc++) {
 			st = new StringTokenizer(br.readLine());
-			int[] rect1 = new int[4];
-			int[] rect2 = new int[4];
+			int[] r1 = new int[4];
+			int[] r2 = new int[4];
 			for (int i = 0; i < 4; i++) {
-				rect1[i] = Integer.parseInt(st.nextToken());
+				r1[i] = Integer.parseInt(st.nextToken());
 			}
 			for (int i = 0; i < 4; i++) {
-				rect2[i] = Integer.parseInt(st.nextToken());
+				r2[i] = Integer.parseInt(st.nextToken());
 			} // 입력끝
 
-			if (rect1[2] < rect2[0] || rect2[2] < rect1[0] || rect1[3] < rect2[1] || rect2[3] < rect1[1]) {
+			if (r1[2] < r2[0] || r2[2] < r1[0] || r1[3] < r2[1] || r2[3] < r1[1]) {
 				System.out.println("d");// 아무것도 안만남
-			} else if ((rect1[0] == rect2[2] && rect1[1] == rect2[3]) || (rect1[0] == rect2[2] && rect1[3] == rect2[1])
-					|| (rect1[2] == rect2[0] && rect1[3] == rect2[1])
-					|| (rect1[2] == rect2[0] && rect1[1] == rect2[3])) {
+			} else if ((r1[0] == rect2[2] && r1[1] == rect2[3]) || (r1[0] == r2[2] && r1[3] == r2[1])
+					|| (r1[2] == r2[0] && r1[3] == r2[1])
+					|| (r1[2] == r2[0] && r1[1] == r2[3])) {
 				System.out.println("c");
-			} else if (rect1[0] == rect2[2] || rect2[0] == rect1[2] || rect1[1] == rect2[3] || rect2[1] == rect1[3]) {
+			} else if (r1[0] == r2[2] || r2[0] == r1[2] || r1[1] == r2[3] || r2[1] == r1[3]) {
 				System.out.println("b");
 			} else {
 				System.out.println("a");

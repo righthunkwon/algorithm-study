@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class Main {
+
+	//14891
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();	
+//		ArrayList<Integer> arr =new ArrayList<>();;
+		int[][] tmp = new int[N][2];
+		int maxi =0;
+		int max=0;
+		for(int i =0;i<N;i++) {
+			tmp[i][0] = sc.nextInt();
+			if(tmp[i][0]>maxi) {
+				maxi = tmp[i][0];
+			}
+			tmp[i][1] = sc.nextInt();	
+			if(tmp[i][1] >max) {
+				max= tmp[i][1];
+			}
+		}
+		
+		int[] arr = new int[maxi+1];
+		for(int i =0;i<N;i++) {
+			arr[tmp[i][0]] = tmp[i][1];
+		}
+		System.out.println(Arrays.toString(arr));
+		int sum = 0;
+		int num=0;
+		int i =0;
+		int a=1;
+		int end = -1;
+		int count =0;
+		while(true) {
+			System.out.println(i+" "+num);
+			if(arr[i]!=0) {
+				if(num<arr[i]) {
+					num = arr[i];
+				}
+			}
+			sum+=num;
+			if(num==max) {
+				end =i;
+				i= maxi+1;
+				a*=-1;
+				num=0;
+				count++;
+			}
+			i+=a;
+			if(num==end && count==1) {
+				break;
+			}
+		}
+		System.out.println(sum);
+
+
+	}
+
+
+
+}

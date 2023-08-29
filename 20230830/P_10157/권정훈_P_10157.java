@@ -14,20 +14,19 @@ public class P_10157 {
 		int r = sc.nextInt(); // 행
 		int k = sc.nextInt(); // 정답 대기번호
 
-		// !!! 중단 조건 !!!
-		// 이렇게 하지 않으면 두 번째 테스트 케이스 통과 불가 
+		// 대기번호가 넘칠 경우
 		if (k > c * r) {
 			System.out.println(0);
 			return; // main method fin
 		}
-		
-		int[][] stage = new int[c][r];
+
+		int[][] stage = new int[r][c];
 
 		int cnt = 1; // 입력 대기번호
 		int x = r - 1; // 시작행
 		int y = 0; // 시작열
 		int dir = 0; // 방향
-		
+
 		// 입력 대기번호가 정답 대기번호보다 작을 때까지만 반복
 		while (cnt != k) {
 			stage[x][y] = cnt;

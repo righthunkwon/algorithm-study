@@ -39,6 +39,7 @@
     <td align="center"><a href="https://github.com/slside"><img src="https://avatars.githubusercontent.com/u/132821972?v=4" width="130px;" alt=""></a></td>
     <td align="center"><a href="https://github.com/hajaeryul"><img src="https://avatars.githubusercontent.com/u/113097210?v=4" width="130px;" alt=""></a></td>
     <td align="center"><a href="https://github.com/jungyounn"><img src="https://avatars.githubusercontent.com/u/141210401?v=4" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/onid057"><img src="https://avatars.githubusercontent.com/u/141606477?v=4" width="130px;" alt=""></a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/righthunkwon"><b>righthunkwon</b></a></td>
@@ -46,8 +47,10 @@
     <td align="center"><a href="https://github.com/slside"><b>slside</b></a></td>
     <td align="center"><a href="https://github.com/hajaeryul"><b>hajaeryul</b></a></td>
     <td align="center"><a href="https://github.com/jungyounn"><b>jungyounn</b></a></td>
+    <td align="center"><a href="https://github.com/onid057"><b>onid057</b></a></td>
   </tr>
   <tr> 
+    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
@@ -68,7 +71,9 @@
 ##### hajaeryul
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=wofbf2)](https://solved.ac/wofbf2)
 ##### jungyounn
-[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=janet1015 )](https://solved.ac/janet1015 )
+[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=janet1015)](https://solved.ac/janet1015)
+##### onid057
+[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerioo)](https://solved.ac/yerioo)
 
  
 <br/>
@@ -76,7 +81,7 @@
 ## ✨ 스터디 운영
 - 스터디는 오프라인으로 2시간 진행한다.
 - 문제는 수업 시간 내 배운 내용을 범위로 한다.
-- 난이도는 BOJ 브론즈 2부터 골드 5까지 구성한다(추후 변경).
+- 난이도는 BOJ 브론즈 2부터 골드 4까지 구성한다(추후 변경).
 - 스터디는 난이도 별로 쉬운 문제부터 한 사람당 20분씩 시간을 배정한다.
 - 10분은 발표자의 발표, 10분은 스터디원들의 코드 리뷰로 구성한다.
 - 매주 풀 문제는 목요일 저녁까지 mm에 올린다.

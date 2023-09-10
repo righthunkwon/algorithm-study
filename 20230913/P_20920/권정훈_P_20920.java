@@ -38,15 +38,15 @@ public class P_20920 {
 		// 1. 빈도
 		// 2. 길이
 		// 3. 사전순
-		
+
 		// 입력 10만개라 BufferedReader 사용
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int n = Integer.parseInt(st.nextToken()); // 단어의 개수
 		int m = Integer.parseInt(st.nextToken()); // 단어의 길이
-		
+
 		// Map<단어, 단어의 개수>
-		Map<String, Integer> wordbook = new HashMap<>(); 
+		Map<String, Integer> wordbook = new HashMap<>();
 
 		for (int i = 0; i < n; i++) {
 			String word = br.readLine();
@@ -71,23 +71,22 @@ public class P_20920 {
 			@Override
 			public int compare(String o1, String o2) {
 
-				
 				// (1) 빈도순으로 정렬
-		        int count1 = wordbook.get(o1); // 빈도
-		        int count2 = wordbook.get(o2); // 빈도
+				int count1 = wordbook.get(o1); // 빈도
+				int count2 = wordbook.get(o2); // 빈도
 
-		        // 빈도가 다르면 빈도에 맞게 단어를 정렬
-		        // count2 > count1 일 경우 count2 count1 순으로 정렬
-		        // count2 < count1 일 경우 count1 count2 순으로 정렬
-		        if (count1 != count2) {
-		            return count2 - count1;
-		        }
-		        
+				// 빈도가 다르면 빈도에 맞게 단어를 정렬
+				// count2 > count1 일 경우 count2 count1 순으로 정렬
+				// count2 < count1 일 경우 count1 count2 순으로 정렬
+				if (count1 != count2) {
+					return count2 - count1;
+				}
+
 				// (2) 빈도가 같으면 길이순으로 정렬
 				if (o1.length() != o2.length()) {
 					return o2.length() - o1.length();
 				}
-				
+
 				// (3) 빈도와 길이가 같으면 사전순으로 정렬
 				// Collections.sort()는 문자열 타입의 원소를 가진 List를 정렬할 경우 사전편찬 순으로 정렬하도록 구현됨
 				return o1.compareTo(o2);

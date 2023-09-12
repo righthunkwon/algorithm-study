@@ -1,9 +1,6 @@
-
-package baek;
-
 import java.io.*;
 import java.util.*;
-//시간초과뜸....
+
 public class Pro_20902_영단어암기는괴로워 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -15,8 +12,8 @@ public class Pro_20902_영단어암기는괴로워 {
 		List<String> list = new ArrayList<>();
 		for (int i = 0; i < N; i++) {
 			String word = br.readLine();
-			if (word.split("").length >= M) {
-				if (map.get(word) != null) {
+			if (word.length() >= M) {
+				if (map.containsKey(word)) {
 					int count = map.get(word);
 					count++;
 					map.put(word, count);
@@ -31,15 +28,23 @@ public class Pro_20902_영단어암기는괴로워 {
 			@Override
 			public int compare(String o1, String o2) {
 				// TODO Auto-generated method stub
+				// 빈도수가 높은 거가 앞인거 -1가 맞다
 
-				if(map.get(o1)!=map.get(o2)) {
-					return map.get(o2) - map.get(o1);
-				}else if(o1.length() != o2.length()) {
-					return o2.length() - o1.length();
-				}else {
-					return o1.compareTo(o2);
+				if (map.get(o1) > map.get(o2)) {
+					return -1;
+				} else if (map.get(o1) < map.get(o2)) {
+					return 1;
+				} else {
+
+					if (o1.length() > o2.length()) {
+						return -1;
+					} else if (o1.length() < o2.length()) {
+						return 1;
+					} else {
+						return o1.compareTo(o2);// 사전순 작은게 더 앞으로
+					}
 				}
-				
+
 			}
 		});
 
@@ -51,19 +56,3 @@ public class Pro_20902_영단어암기는괴로워 {
 
 	}
 }
-//				// 빈도수가 높은 거가 앞인거 -1가 맞다
-//
-//				if (map.get(o1) > map.get(o2)) {
-//					return -1;
-//				} else if (map.get(o1) < map.get(o2)) {
-//					return 1;
-//				} else {
-//
-//					if (o1.length() > o2.length()) {
-//						return -1;
-//					} else if (o1.length() < o2.length()) {
-//						return 1;
-//					} else {
-//						return o1.compareTo(o2);// 사전순 작은게 더 앞으로
-//					}
-//				}

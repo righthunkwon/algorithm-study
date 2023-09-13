@@ -28,6 +28,9 @@ public class _20920_영단어암기는괴로워 {
 			String s = br.readLine();
 			if(s.length()<m) continue;
 			map.put(s, map.getOrDefault(s, 0)+1); //이미 나온 단어인 경우 카운트 증가, 처음 나온 단어는 1카운트
+			//getOrDefault(key, defaultValue)
+			//key: 값을 가져와야 하는 요소의 키
+			//defaultValue: 지정된 키로 매핑된 값이 없는 경우 반환되어야 하는 기본값 ->이걸 0으로 하고 뒤에서 +1을 해준다
 		}
 		//map에서 단어들 가져와서 ArrayList에 저장한다
 		List<String> words = new ArrayList<>(map.keySet());

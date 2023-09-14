@@ -3,7 +3,7 @@
 문제 : 1417번 (국회의원 선거) <br />
 개념 : 구현, 자료구조, 그리디, 시뮬레이션, 우선순위 큐 <br />
 등급 : 실버5 <br />
-링크 : <a href="https://www.acmicpc.net/problem/1417" target='_blank'>1417번 (국회의원 선거)</a> <br />
+링크 : <a href="https://www.acmicpc.net/problem/1417" target="_blank">1417번 (국회의원 선거)</a> <br />
 <br />
 
 ### 권정훈

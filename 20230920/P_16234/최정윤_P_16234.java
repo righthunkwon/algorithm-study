@@ -16,6 +16,14 @@ public class Pro_16234_인구이동 {
 	static int sum;
 	static boolean move;
 
+	//풀기 전 접근
+	//1) 인접한 국가들을 확인하여 인구이동하는 조건 만족하는지 확인
+	//2) 같은 날 여러 무리에서 인구이동이 일어날 수 있다
+	//3) 같은 날 인구이동이 일어나더라도 다른 무리면 avg값을 따로 계산해주어야하기 때문에 같은 무리만 한 queue에 담고 bfs()반복하여 진행
+	//4) 당일 모든 국가 체크 끝났으면 다음 날로 이동 
+	//3) 1~4를 여러번 반복하여 몇 일동안 인구 이동하는지 체크하면서 진행 
+	
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());

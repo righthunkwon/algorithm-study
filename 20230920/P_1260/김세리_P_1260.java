@@ -56,8 +56,7 @@ public class _1260_DFS와BFS {
 			
 		}
 	}//dfs
-	
-	//예제 2가 나오다 만다 왜지??????????ㅜㅜ
+
 	
 	public static void bfs(int start) {
 		// 시작을 queue에 넣는다
@@ -73,7 +72,7 @@ public class _1260_DFS와BFS {
 			
 			//나와 연결되어 있으면서 방문하지 않은 애들을 queue에 넣고 방문처리를 한다
 			for(int i=1;i<=N;i++) {
-				if(arr[start][i]==1 && !visited[i]) {
+				if(arr[t][i]==1 && !visited[i]) {
 					q.add(i);
 					visited[i] =true;
 				}

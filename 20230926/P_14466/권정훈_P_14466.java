@@ -97,19 +97,19 @@ public class P_14466 {
 		visited[x][y] = true; // 방문처리
 		
 		Queue<Node> q = new LinkedList<>(); // 큐를 위한 LinkedList
-		q.add(new Node(x, y)); // 시작 노드 추가
+		q.add(new Node(x, y)); // 소의 좌표 추가
 		
-		int cnt = -1; // 자기 자신을 세지 않기 위해 초기값을 -1로 설정
+		int cnt = -1; // 자기 자신(소)을 세지 않기 위해 초기값을 -1로 설정
 		while (!q.isEmpty()) {
 			
 			// 큐에서 노드를 하나 빼고,
 			// 현재 위치에 소가 있을 경우 cnt 증가
-			Node node = q.poll();
-			if (map[node.x][node.y] == 1) {
-				cnt++;
+			Node node = q.poll(); // 소를 빼내고
+			if (map[node.x][node.y] == 1) { // 방문한 위치가 소면
+				cnt++; // 소 마리수 증가
 			}
-			
-			// 현재 노드와 상하좌우로 인접한 노드를 확인하고 방문 여부를 확인
+		
+			// 현재 노드(소)와 상하좌우로 인접한 노드를 확인하고 방문 여부를 확인
 			for (int i = 0; i < 4; i++) {
 				int nx = node.x + dx[i];
 				int ny = node.y + dy[i];
@@ -117,15 +117,16 @@ public class P_14466 {
 				
 				// 범위 내부에 있고 아직 방문하지 않았다면
 				if (nx >= 1 && nx <= n && ny >= 1 && ny <= n && !visited[nx][ny]) {
-					for (Node tmp : list[node.x][node.y]) {
-						// 현재 노드와 다음 노드를 연결하는 길이 있다면
+					
+					for (Node tmp : list[node.x][node.y]) { 
+						// 새로 방문하는 곳이 다리의 좌표와 동일하다면, 즉 다리를 건넜다면
 						if (tmp.x == nx && tmp.y == ny) {
-							flag = false; // 길을 건너야하므로 일단 false 처리
+							flag = false; // 다리를 건넜으므로 false 처리하여 안 가는 걸로 처리
 							continue;
 						}
 					}
 
-					// 길이 필요하지 않다면
+					// 다리가 필요하지 않다면 간다
 					if (flag) {
 						q.add(new Node(nx, ny)); // 다음 노드를 큐에 추가하고
 						visited[nx][ny] = true; // 다음 노드를 방문처리

@@ -22,7 +22,7 @@ public class _1722_순열의순서 {
 		
 		// 1일 때 k번 째 조합을 출력해야한다
 		if(num==1) {
-			int k = Integer.parseInt(str.nextToken());
+			long k = Long.parseLong(str.nextToken());
 			
 			for(int i=0;i<N;i++) { // arr 범위
 				for(int j=1;j<=N;j++) { // visited 범위

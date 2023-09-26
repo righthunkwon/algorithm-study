@@ -90,7 +90,6 @@ public class Pro_14466 {
 
 		for (int i = 1; i <= N; i++) {
 			for (int j = 1; j <= N; j++) {
-				if (visited[i][j])
 					if (visited[i][j] && cow[i][j]) {
 						count += 1;
 					}

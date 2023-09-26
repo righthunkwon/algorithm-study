@@ -51,8 +51,8 @@ public class BaekJoon_Q11123_양_한마리_양_두마리 {
 			
 			for(int i = 1; i<=H; i++) {
 				for(int j =1 ;j<=W;j++) {
-					
-					if(!visit[i][j]&&arr[i][j]==0) {
+									  //배열 돌면서
+					if(!visit[i][j]&&arr[i][j]==0) {  //방문한적 없고, 양(0)이라면 dfs 진행
 						dfs(i,j); 
 						cnt++; //dfs한번 할때마다 양 무리 1개씩 있는것!
 					}

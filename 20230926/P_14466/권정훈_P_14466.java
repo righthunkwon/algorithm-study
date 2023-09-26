@@ -54,7 +54,7 @@ public class P_14466 {
 		// 각 노드의 ArrayList 초기화
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= n; j++) {
-				list[i][j] = new ArrayList<>();
+				list[i][j] = new ArrayList<Node>();
 			}
 		}
 

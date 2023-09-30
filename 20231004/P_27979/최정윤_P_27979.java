@@ -1,9 +1,5 @@
-package baek;
-
 import java.io.*;
 import java.util.*;
-
-
 public class Pro_27979_볼링장아르바이트2 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,7 +14,6 @@ public class Pro_27979_볼링장아르바이트2 {
 		//max값은 그 시점에만 확인하기 때문에 마지막에 안빼는 공 중에 빼는 공 보다 가벼운 공이  있는지  다시 한번 확인한다.(앞에서부터 넣는데 새로 넣는 공이 원래 있던 공보다 무게가 크면 안되기때문)
 		//있다면 빼는 공으로 전환
 		
-	
 		int result = 0;//정답
 		int max = 0;//앞부터 탐색시 그 시점에서의 가장 큰 공무게
 		int[] remove = new int[N];//빼서 다시 넣어야하는 것은 1로 바꿔놓는 배열
@@ -41,6 +36,5 @@ public class Pro_27979_볼링장아르바이트2 {
 				result++;
 		}
 		System.out.println(result);
-
 	}
 }

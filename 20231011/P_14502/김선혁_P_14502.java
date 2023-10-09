@@ -4,7 +4,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 
-public class Main {
+public class Main2 {
 	static int N; // NxN
 	static int M; // NxN
 	static int[][] arr;
@@ -28,14 +28,14 @@ public class Main {
 		}
 		// 입력끝 
 		min = 0;
-		choice(0,0,0);
+		choice(0);
 		System.out.println(min);
 		
 
 	}
 	// 이제 벽 3개를 더 구해보자
 	// 벽 3개를 더 구하는 메서드
-	public static void choice(int cnt,int x, int y) {
+	public static void choice(int cnt) {
 		if(cnt ==3) {
 			// 3개를 다 구하면
 			// 이제 바이러스 좌표를 큐에다 다 넣고 시작할거임
@@ -46,15 +46,13 @@ public class Main {
 			solve();
 			return;
 		}
-		for(int i =x;i<N;i++) {
+		for(int i =0;i<N;i++) {
 			for(int j=0;j<M;j++) {
-				// 방금전 돌았던 좌표 이후로만 돌기위해
-				// 범위선정
-				if(i==x && j<=y) continue;				
+				// 벽을만나면
 				if(arr[i][j] == 0) {
 					arr[i][j] = 1;
 					// 해당 좌표 선정
-					choice(cnt+1,i,j);
+					choice(cnt+1);
 					arr[i][j] = 0;
 				}				
 			}

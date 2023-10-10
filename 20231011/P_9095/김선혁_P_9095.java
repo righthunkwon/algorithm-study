@@ -5,10 +5,14 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);	
 		int T = sc.nextInt();
+		
 		// N=1 -> 1개
 		// N=2 -> 2개
 		// N=3 -> 4개(1,1,1 / 1,2 / 2,1 / 3)
 		// N=4 -> 7개
+
+		// 5의경우는 5 = 1+4 / 2+3 / 3+2 이렇게 볼 수 있음
+		// 4일때에 +1, 2일때에 +3, 3일때 +2로 볼 수 있다.
 		// N=5 -> 13개 
 		// ===> N번쨰 수는 N-3 + N-2 + N-1번째 항의 합과 같다고 볼 수 있음
 			

@@ -1,8 +1,3 @@
-
-
-ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
-
-
 package AlgoStudy;
 
 import java.util.Arrays;
@@ -30,6 +25,7 @@ public class BOJ_Q14502_연구소 {
 	static int[] dx = { 0, 0, -1, 1 }; // 상하좌우 탐색용 델타
 	static int[] dy = { -1, 1, 0, 0 };
 	static int maxSafe; // 최대 안전구역 넓이
+	static int [][]tmpMap;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -45,7 +41,7 @@ public class BOJ_Q14502_연구소 {
 		}
 		maxSafe = 0;
 
-		dfs(0,0,0);
+		dfs(0);
 
 		System.out.println(maxSafe);
 
@@ -54,7 +50,7 @@ public class BOJ_Q14502_연구소 {
 	public static void bfs() {
 		Queue<Pos> queue = new LinkedList<Pos>();// bfs용 큐 만들기
 
-		int[][] tmpMap = new int[N][M]; // bfs용 임시 맵
+		tmpMap = new int[N][M]; // bfs용 임시 맵
 		visit = new boolean[N][M]; //방문배열 초기화
 
 		for (int i = 0; i < N; i++) {
@@ -62,7 +58,7 @@ public class BOJ_Q14502_연구소 {
 				tmpMap[i][j] = map[i][j];
 
 				if (tmpMap[i][j] == 2) { // 바이러스 발생지면
-					queue.add(new Pos(j, i)); // 일단 큐에 넣는다
+					queue.add(new Pos(i, j)); // 일단 큐에 넣는다
 					visit[i][j]=true;//방문처리
 				}
 			}
@@ -75,14 +71,14 @@ public class BOJ_Q14502_연구소 {
 				int nextX = now.x + dx[i];
 				int nextY = now.y + dy[i];
 
-				if (nextX < 0 || nextY < 0 || nextX >= M || nextY >= N || tmpMap[nextY][nextX] == 1
-						|| visit[nextY][nextX])
+				if (nextX < 0 || nextY < 0 || nextX >= N || nextY >= M || tmpMap[nextX][nextY] == 1
+						|| visit[nextX][nextY])
 					continue;
 				// 범위 벗어나거나, 벽이거나, 이미 방문완료면 쳐내
 
-				tmpMap[nextY][nextX] = 2; // 감염시키고
-				visit[nextY][nextX] = true; // 방문처리한 다음
-				queue.add(new Pos(nextY, nextX)); // 거기서 다시 탐색하기 위해 큐에 넣음
+				tmpMap[nextX][nextY] = 2; // 감염시키고
+				visit[nextX][nextY] = true; // 방문처리한 다음
+				queue.add(new Pos(nextX, nextY)); // 거기서 다시 탐색하기 위해 큐에 넣음
 			}
 		} // 바이러스 전염 끝
 
@@ -91,21 +87,11 @@ public class BOJ_Q14502_연구소 {
 
 	}
 
-	public static void dfs(int wallcnt, int x, int y) {
+	public static void dfs(int wallcnt) {
 
 	    if (wallcnt == 3) { // 3개 벽 세웠으면 bfs로 바이러스 퍼지게 하고 안전지대 카운트
 	        // 벽을 세우기 전에 현재 위치의 값을 저장
-	        int[][] originalMap = new int[N][M];
-	        for (int i = 0; i < N; i++) {
-	            originalMap[i] = Arrays.copyOf(map[i], M);
-	        }
-	        
 	        bfs();
-	        
-	        // 벽을 세우고 나서 원래 상태로 되돌리기
-	        for (int i = 0; i < N; i++) {
-	            map[i] = Arrays.copyOf(originalMap[i], M);
-	        }
 	        return;
 	    }
 
@@ -115,7 +101,7 @@ public class BOJ_Q14502_연구소 {
 
 				if (map[i][j] == 0) {
 					map[i][j] = 1;
-					dfs(wallcnt + 1, j, i);
+					dfs(wallcnt + 1);
 					map[i][j] = 0;
 				}
 			}
@@ -129,7 +115,7 @@ public class BOJ_Q14502_연구소 {
 		int cnt = 0;
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
-				if (map[i][j] == 0)
+				if (tmpMap[i][j] == 0)
 					cnt++;
 			}
 		}

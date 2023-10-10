@@ -36,7 +36,7 @@ public class Main {
         for(int i=0;i<N;i++)
             for(int j=0;j<M;j++)
                 if(map[i][j]==2)
-                    Q.offer(new Node(i,j));
+                    Q.add(new Node(i,j));
         int[][] arr=new int[N][M];
         for(int i=0;i<N;i++) arr[i]=map[i].clone();
         while(!Q.isEmpty()) {

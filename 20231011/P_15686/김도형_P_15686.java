@@ -12,8 +12,8 @@ public class BOJ_Q15686_치킨_배달 {
 	static int N, M; // 도시크기 N*N, 최대치킨집 수 M
 	static int[][] map; // 도시 정보
 	static List<Integer> hr, hc, cr, cc; // 좌표 저장용 리스트
-	static boolean[] open;
-	static int ans;
+	static boolean[] open; //오픈여부 저장 배열
+	static int ans; //정답
 
 	public static void main(String[] args) throws Exception{
 
@@ -63,37 +63,36 @@ public class BOJ_Q15686_치킨_배달 {
 	public static int minChickenDistance() {
 		
 		int sum = 0;
-		for (int i = 0; i < hr.size(); i++) {
-			int min = Integer.MAX_VALUE;
+		for (int i = 0; i < hr.size(); i++) { //집 수만큼 반복
+			int min = Integer.MAX_VALUE; //각각의 집의 최소 치킨 거리 초기화
 
-			for (int j = 0; j < cr.size(); j++) {
+			for (int j = 0; j < cr.size(); j++) { //치킨집 수만큼 반복
 				if (open[j] == true) { //오픈한 치킨집이면 
 					int dist = Math.abs(hr.get(i) - cr.get(j)) //집에서부터 거리 계산해줌
 							+ Math.abs(hc.get(i) - cc.get(j));
 					
-					min = Math.min(min, dist); //최소 거리 갱신
+					min = Math.min(min, dist); //해당 집의 최소 치킨 거리 갱신
 				}
 			}
-			sum += min; 
+			sum += min; //모든 집의 최소치킨 거리 더해줌
 		}
-		return sum;
+		return sum; //그 때의 도시의 치킨거리 return
 	}
 
 	// 오픈할 치킨집 조합을 구할 메서드
 	public static void comb(int start,int cnt) {
 		
 		//기저
-		if(cnt == M) {
-			int a = minChickenDistance();
-			ans = Math.min(ans, a);
+		if(cnt == M) { //M개의 치킨집이 오픈했으면
+			ans = Math.min(ans, minChickenDistance()); //최소치킨 거리 계산해보고 최소값보다 작으면 갱신
 			return;
 		}
 		
 		//재귀
 		for(int i = start; i < cr.size();i++) { //@@@@@@@@@@int i = 0 부터로 했다가 시간초과뜸..ㅠㅠ
 			open[i]=true; //방문처리
-			comb(i+1,cnt+1);
-			open[i]=false;
+			comb(i+1,cnt+1); 
+			open[i]=false; //원상복구
 		}
 		
 

@@ -34,7 +34,7 @@ public class Main {
 						min=Math.min(min, Math.abs(b.get(j).x-a.get(i).x)+Math.abs(b.get(j).y-a.get(i).y));
 					}
 					sum+=min;
-                    if(sum>=dmin) break;
+                    			if(sum>=dmin) break;
 				}
 				dmin=Math.min(sum, dmin);
 			}

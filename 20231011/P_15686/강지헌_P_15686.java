@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 public class Main {
-	static int N,M,dmin=Integer.MAX_VALUE;
+	static int N,M,ans=Integer.MAX_VALUE;
 	static boolean[] chk;
 	static List<Node> a,b;
 	private static final BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
@@ -21,7 +21,7 @@ public class Main {
 		}
 		chk=new boolean[b.size()];
 		dfs(0,0);
-		System.out.println(dmin);
+		System.out.println(ans);
 	}
 	private static void dfs(int idx,int cnt) {
 		if(idx==b.size()) {
@@ -34,9 +34,9 @@ public class Main {
 						min=Math.min(min, Math.abs(b.get(j).x-a.get(i).x)+Math.abs(b.get(j).y-a.get(i).y));
 					}
 					sum+=min;
-                    			if(sum>=dmin) break;
+                    			if(sum>=ans) break;
 				}
-				dmin=Math.min(sum, dmin);
+				ans=Math.min(sum, ans);
 			}
 			return;
 		}

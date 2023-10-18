@@ -2,6 +2,9 @@ package baek;
 
 import java.io.*;
 import java.util.*;
+//최단거리 =bfs
+//최대값 =dfs
+//bfs로 하게 되면 메모리초과
 
 public class Pro_1987_알파벳dfs {
 	static int[] dr, dc;
@@ -16,16 +19,14 @@ public class Pro_1987_알파벳dfs {
 		R = Integer.parseInt(st.nextToken());
 		C = Integer.parseInt(st.nextToken());
 		board = new char[R][C];
-		visited = new boolean[R][C];
 		for (int i = 0; i < R; i++) {
 			board[i] = br.readLine().toCharArray();
 		}
 		max = 0;
 		dr = new int[] { -1, 1, 0, 0 };
 		dc = new int[] { 0, 0, -1, 1 };
-		alpa = new boolean[26];
-		visited[0][0] = true;
-		alpa[board[0][0] - 'A'] = true;
+		alpa = new boolean[26];			//알파벳 사용되면 그 자리 true로 바꿔줄 것이다.
+		alpa[board[0][0] - 'A'] = true; //시작자리 true 세팅 
 		dfs(0, 0);
 		System.out.println(max);
 	}
@@ -34,19 +35,13 @@ public class Pro_1987_알파벳dfs {
 		for (int i = 0; i < 4; i++) {
 			int nr = r + dr[i];
 			int nc = c + dc[i];
-			if (nr < 0 || nc < 0 || nr >= R || nc >= C || visited[nr][nc]) {
-				continue;
-			}
-			if (alpa[board[nr][nc] - 'A']) {//이미 그 자리가 true라면 사용했다는 의미이다.
-				max = Math.max(max, count());
-				continue;
+			if (nr < 0 || nc < 0 || nr >= R || nc >= C || alpa[board[nr][nc] - 'A']) {
+				continue;//범위값 초과하고 이미 있는 알파벳이면 넘어가기
 			}
 			alpa[board[nr][nc] - 'A'] = true;//사용
-			visited[nr][nc] = true;
 			dfs(nr, nc);
 			alpa[board[nr][nc] - 'A'] = false;//사용해지
-			visited[nr][nc] = false;
-		}
+		}//4방향 끝난 후 max값  항상 갱신
 		max = Math.max(max, count());
 	}
 

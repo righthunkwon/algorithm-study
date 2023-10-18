@@ -1,5 +1,3 @@
-package _20231018;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -56,7 +54,7 @@ public class _2638_치즈3 {
         visited[0][0]=true; // 방문체크도 해준다
         
         while(!queue.isEmpty()) { // 큐가 빌때까지 돌린다(외부공기 모두 탐색해서 치즈가 공기와 접촉한 변의 수를 센다)
-            int[] temp = queue.poll(); // 외부공기 하나를 큐에서 빼고 tmp에 저장한다
+            int[] temp = queue.poll(); // 외부공기 하나를 큐에서 빼고 temp에 저장한다
             
             for(int i=0;i<4;i++) { // 사방탐색 시작
                 int nx = temp[0]+dx[i];
@@ -95,3 +93,6 @@ public class _2638_치즈3 {
         else return false;
     }
 }
+
+
+// 풀이법 출처: https://javaju.tistory.com/51

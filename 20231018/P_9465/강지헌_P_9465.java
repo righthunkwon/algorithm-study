@@ -17,8 +17,8 @@ public class q9465 {
 			int ans=Math.max(arr[1][0], arr[1][1]);
 			dy[1][0]=arr[1][0]; dy[1][1]=arr[1][1];
 			for(int i=2;i<=N;i++) {
-				dy[i][0]=Math.max(dy[i-1][1],Math.max(dy[i-2][0], dy[i-2][1]))+arr[i][0];
-				dy[i][1]=Math.max(dy[i-1][0],Math.max(dy[i-2][0], dy[i-2][1]))+arr[i][1];
+				dy[i][0]=Math.max(dy[i-1][1],dy[i-2][1])+arr[i][0];
+				dy[i][1]=Math.max(dy[i-1][0],dy[i-2][0])+arr[i][1];
 				ans=Math.max(ans, Math.max(dy[i][0], dy[i][1]));
 			}
 			System.out.println(ans);

@@ -10,7 +10,6 @@ public class Pro_17070_파이프옮기기1 {
 
 	static class Pipe {
 		int r, c, dir;
-
 		public Pipe(int r, int c, int dir) {
 			this.r = r;
 			this.c = c;
@@ -31,12 +30,12 @@ public class Pro_17070_파이프옮기기1 {
 			}
 		} // 입력끝
 
-		if (map[N - 1][N - 1] == 1)
+		if (map[N - 1][N - 1] == 1)//마지막칸이 1이면 그냥 0리턴
 			System.out.println(0);
 		else {
 			dr = new int[][] { { 0 }, { 0, 1, 1 }, { 1 } };//가로 대각선 세로 순서
 			dc = new int[][] { { 1 }, { 1, 0, 1 }, { 0 } };
-			q.add(new Pipe(0, 1, 0));
+			q.add(new Pipe(0, 1, 0));//시작점은 두번째 칸이므로
 			bfs();
 			System.out.println(cnt);
 		}
@@ -45,10 +44,8 @@ public class Pro_17070_파이프옮기기1 {
 	private static void bfs() {
 		while (!q.isEmpty()) {
 			Pipe curr = q.poll();
-			if (curr.r == N - 1 && curr.c == N - 1)
-				cnt++;
+			if (curr.r == N - 1 && curr.c == N - 1) {cnt++;continue;}//마지막칸에 왔다면 cnt++
 			int dir = curr.dir;
-
 			// 가로면 가로,대각선
 			// 세로면 세로,대각선
 			// 대각선이면 가로,세로,대각선

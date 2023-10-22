@@ -57,7 +57,7 @@ public class Main {
 		// 저장되어있으므로
 		// 해당 숫자를 기준으로 두개합이
 		// 가장큰 수를 max로 저장해서 출력
-		for (int i = 1; i < N; i++) {
+		for (int i = 0; i < N; i++) {
             max = Math.max(max, dp1[i] + dp2[i]);
         }
 		//max인 지점의 숫자가 2번포함되었으므로 -1

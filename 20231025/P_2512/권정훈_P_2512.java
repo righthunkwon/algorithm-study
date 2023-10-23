@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // 예산
-// 이것은 완탐인가 이진탐색인가...
 // 특정 값을 찾을 때 시간초과의 우려가 생긴다면 이진탐색을 활용하자
+// st, ed, mid는 인덱스로 잡을 수도 있지만 값으로 잡아 문제를 풀 수도 있다. 
 
 // 이진탐색
 // (1) 초기 탐색 범위는 배열 전체
@@ -52,7 +52,7 @@ public class P_2512 {
 		
 		// 이분탐색이 필요할 경우(상한액 설정 후 배정)
 		else {
-			st = 0; // 시작, arr[0]으로 하면 안 풀림.. 왜일까..
+			st = 0; // 시작
 			ed = arr[n-1]; // 끝
 			binarySearch(st, ed);
 		}

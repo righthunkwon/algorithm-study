@@ -43,19 +43,19 @@ public class Pro_15684_사다리조작2 {
 	}
 
 	private static void dfs(int count) {
-		if (iTOi()) {
-			iToi = true;
+		if (iTOi()) {//모든 선이 본인으로 돌아간다면
+			iToi = true; //true로 바꿔서 main 끝내라
 			return;
 		}
 		if (count == cnt)
 			return;
 		for (int i = 1; i <= H; i++) {
 			for (int j = 1; j < N; j++) {
-				if (go[i][j] == 0&&go[i][j+1]==0) {
-					go[i][j] = j + 1;
+				if (go[i][j] == 0&&go[i][j+1]==0) {//그 지점과 이을 지점에 이미 사다리가 없다면 
+					go[i][j] = j + 1;//j 와 j+1을 잇는 사다리 생성
 					go[i][j + 1] = j;
-					dfs(count + 1);
-					go[i][j] = 0;
+					dfs(count + 1);//사다리개수 +1하고
+					go[i][j] = 0;//다시 사다리 없애기
 					go[i][j + 1] = 0;
 				}
 
@@ -63,14 +63,14 @@ public class Pro_15684_사다리조작2 {
 		}
 	}
 	private static boolean iTOi() {
-		for (int i = 1; i <= N; i++) {
-			int now = i;
-			for (int j = 1; j <= H; j++) {
-				if (go[j][now] != 0) {
-					now = go[j][now];
+		for (int i = 1; i <= N; i++) {//시작선
+			int now = i;//저장 후 
+			for (int j = 1; j <= H; j++) {//가로선 가로선에 사다리가 그려져 있는지 확인
+				if (go[j][now] != 0) {//0이 아니면 배열에 저장된 선으로 가야한다.
+					now = go[j][now];//now값 바꾸기 바꾼값으로 j for문 반복하면 된다.
 				}
 			}
-			if (now != i) {
+			if (now != i) {//현재 값이랑 시작선이랑 다르면 i에서 i로 온 것이 아니므로 false반환
 				return false;
 			}
 		}

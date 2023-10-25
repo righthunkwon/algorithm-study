@@ -2,49 +2,59 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-	static int N,M,C;
-	static int[][] arr;
 	public static void main(String [] args) throws IOException {
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st=new StringTokenizer(br.readLine());
-		N=Integer.parseInt(st.nextToken());
-		M=Integer.parseInt(st.nextToken());
-		C=Integer.parseInt(st.nextToken());
-		arr=new int[C+1][N+1];
-		for(int i=0;i<M;i++) {
+		int N=Integer.parseInt(st.nextToken());
+		int M=Integer.parseInt(st.nextToken());
+		int[][] arr=new int[N][M];
+		int[] xx= {1,0,-1,0}, yy= {0,1,0,-1};
+		for(int i=0;i<N;i++) {
 			st=new StringTokenizer(br.readLine());
-			arr[Integer.parseInt(st.nextToken())][Integer.parseInt(st.nextToken())]=1;
+			for(int j=0;j<M;j++) arr[i][j]=Integer.parseInt(st.nextToken());
 		}
-		for(int i=0;i<4;i++) dfs(1,0,i);
-		System.out.println(-1);
-	}
-	private static void dfs(int st, int c,int mc) {
-		if(c==mc) {
-			if(check()) {
-				System.out.println(mc);
-				System.exit(0);
-			}
-			return;
-		}
-		for(int i=st;i<=C;i++) {
-			for(int j=1;j<N;j++) {
-				if(arr[i][j]+arr[i][j+1]+arr[i][j-1]==0) {
-					arr[i][j]=1;
-					dfs(i,c+1,mc);
-					arr[i][j]=0;
+		
+		int ans=0;
+		while(true) {
+			ans++;
+			int[][] chk = new int[N][M];
+			for(int i=1;i<N-1;i++) {
+				for(int j=1;j<M-1;j++) {
+					for(int k=0;k<4;k++) if(arr[i][j]+chk[i][j]>0 && arr[i+xx[k]][j+yy[k]]==0) chk[i][j]--;
 				}
 			}
-		}
-	}
-	static boolean check() {
-		for(int i=1;i<=N;i++) {
-			int t=i;
-			for(int j=1;j<=C;j++) {
-				if(arr[j][t]!=0) t++;
-				else if(t-1>=0 && arr[j][t-1]!=0) t--;
+			for(int i=1;i<N-1;i++) {
+				for(int j=1;j<M-1;j++) {
+					arr[i][j]+=chk[i][j];
+				}
 			}
-			if(t!=i) return false;
+			chk = new int[N][M];
+			boolean f=false;  
+			for(int i=1;i<N-1;i++) {
+				for(int j=1;j<M-1;j++) {
+					if(arr[i][j]!=0 && chk[i][j]==0) {
+						if(f) {
+							System.out.println(ans);
+							return;
+						}
+						f=true;
+						Queue<int[]> Q = new LinkedList<>();
+						Q.add(new int[] {i,j});
+						chk[i][j]=1;
+						while(!Q.isEmpty()) {
+							int[] t=Q.poll();
+							for(int k=0;k<4;k++) {
+								if(arr[t[0]+xx[k]][t[1]+yy[k]]!=0 && chk[t[0]+xx[k]][t[1]+yy[k]]==0) {
+									chk[t[0]+xx[k]][t[1]+yy[k]]=1;
+									Q.add(new int[] {t[0]+xx[k],t[1]+yy[k]});
+								}
+							}
+						}
+					}
+				}
+			}
+			if(!f) break;
 		}
-		return true;
+		System.out.println(0);
 	}
 }

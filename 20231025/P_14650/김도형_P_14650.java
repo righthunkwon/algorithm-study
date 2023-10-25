@@ -4,15 +4,14 @@ import java.util.Scanner;
 
 public class BOJ_Q14650_걷다보니_신천역_삼 {
 	public static void main(String[] args) {
-
 		Scanner sc = new Scanner(System.in);
 		double N = sc.nextInt();
 		int ans = 0;
-		if(N>=2) {
-			ans = (int) (2*Math.pow(3, N-2));
-		}	
+		if(N>=2) ans = (int) (2*Math.pow(3, N-2));
 		System.out.println(ans);
-		
+	}// main
+}// class
+
 /* 규칙 2 이상부터는 2*3^(N-2)
 	1 0
 	2 2	(2*1)
@@ -50,6 +49,4 @@ public class BOJ_Q14650_걷다보니_신천역_삼 {
 //		}
 //		System.out.println(cnt);
 
-	}// main
 
-}// class

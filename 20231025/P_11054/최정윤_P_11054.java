@@ -20,14 +20,14 @@ public class Pro_11054_가장긴바이토닉부분수열 {
 		int[] dp_f = new int[N];
 		// 1.앞에 작은 것이 몇 개 있는지
 		  
-		dp_f[0] = 0;//처음 값보다 작은 수는 없을 테니 0으로 초기값 세팅
+		dp_f[0] = 0;//처음 값보다 작은 수는 없을 테니 0으로 초기값 세팅, 어차피 0이여서 상관없긴하다.
 		for (int i = 1; i < N; i++) {//peak의 기준
 			for (int j = 0; j < i; j++) {//본인 전까지
 				if (arr[i] > arr[j])//나보다 작은 수면 (그 수 보다 작은 수+1)과 나 자신 중 큰 값으로 갱신
 					dp_f[i] = Math.max(dp_f[j] + 1, dp_f[i]);
 			}
 		}
-//		System.out.println(Arrays.toString(dp_min));
+
 		//2.뒤에 작은 것이 몇 개 있는지
 		int[] dp_b = new int[N];
 		dp_b[N - 1] = 0;
@@ -37,7 +37,7 @@ public class Pro_11054_가장긴바이토닉부분수열 {
 					dp_b[i] = Math.max(dp_b[j] + 1, dp_b[i]);
 			}
 		}
-//		System.out.println(Arrays.toString(dp_max));
+
 		int[] dp = new int[N];
 		int max = 0;
 		for (int i = 0; i < N; i++) {

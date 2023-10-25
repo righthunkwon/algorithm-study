@@ -9,15 +9,13 @@ public class Main {
 		int M=Integer.parseInt(st.nextToken());
 		int[][] arr=new int[N][M];
 		int[] xx= {1,0,-1,0}, yy= {0,1,0,-1};
-		int s=0,e=0;
 		for(int i=0;i<N;i++) {
 			st=new StringTokenizer(br.readLine());
-			for(int j=0;j<M;j++) {
-				arr[i][j]=Integer.parseInt(st.nextToken());
-			}
+			for(int j=0;j<M;j++) arr[i][j]=Integer.parseInt(st.nextToken());
 		}
+		
 		int ans=0;
-		while(check(N,M,arr)) {
+		while(true) {
 			ans++;
 			int[][] chk = new int[N][M];
 			for(int i=1;i<N-1;i++) {
@@ -55,15 +53,8 @@ public class Main {
 					}
 				}
 			}
+			if(!f) break;
 		}
 		System.out.println(0);
-	}
-	static boolean check(int n,int m,int[][] a) {
-		for(int i=1;i<n-1;i++) {
-			for(int j=1;j<m-1;j++) {
-				if(a[i][j]!=0) return true;
-			}
-		}
-		return false;
 	}
 }

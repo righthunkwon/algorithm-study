@@ -116,21 +116,23 @@ public class BOJ_Q12100_2048_Easy {
 						arr[x - 1][y] = arr[x][y];  //이동하고
 						arr[x][y] = 0; //원래있던 자리 0으로
 						hapcomplete[x - 1][y] = hapcomplete[x][y];   //합침 여부도 이동시키고
-						hapcomplete[x][y] = false;  //원래자리의 합침여부는 0으로
-						x--;
-					} else if (x - 1 >= 0 && arr[x - 1][y] == arr[x][y] && !hapcomplete[x - 1][y]
+						hapcomplete[x][y] = false;  //원래자리의 합침여부는 false로
+						x--; //옮겨간곳에서 다시 while문 돈다
+					} else if (x - 1 >= 0 && arr[x - 1][y] == arr[x][y] && !hapcomplete[x - 1][y] //이동할 곳이 범위 안이고 자기와 숫자가 같고 함친적 없으면
 							&& !hapcomplete[x][y]) { // 합체
-						arr[x - 1][y] += arr[x][y];
-						arr[x][y] = 0;
-						hapcomplete[x - 1][y] = true;
-						x--;
+						arr[x - 1][y] += arr[x][y]; //합체하고
+						arr[x][y] = 0; //원래자리는 0으로
+						hapcomplete[x - 1][y] = true; //합침여부 true처리
+						x--;//옮겨간곳에서 다시 while문 돈다
 					} else
-						break;
+						break; //합치거나 이동 불가능하면 while 종료
 				}
 			}
 		}
 		return arr;
 	}
+	
+	//이하 동일한 로직으로..
 
 	// 아래로이동
 	public static int[][] movedown(int[][] arr) {

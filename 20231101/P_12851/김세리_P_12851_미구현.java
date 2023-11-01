@@ -29,29 +29,29 @@ public class _12851_숨바꼭질2 {
             for(int i=N+1;i<=K;i++) {
                 if(i%2==0) {
                     int a = dp[0][i/2]+1;
-                    int b = dp[0][(i-1)/2]+2;
-                    int c = dp[0][(i+1)/2]+2;
+                    int b = dp[0][i-1]+1;
+//                    int c = dp[0][i+1]+1;
 //                    int d = dp[0][i-1]+1;
 //                    int e = dp[0][i+1]+1;
                     
-                    dp[0][i]= Math.min(Math.min(a, b),c);
+                    dp[0][i]= Math.min(a, b);
                     if(dp[0][i]==a) dp[1][i] += dp[1][i/2];
-                    if(dp[0][i]==b) dp[1][i] += dp[1][(i-1)/2];
-                    if(dp[0][i]==c) dp[1][i] += dp[1][(i+1)/2];
+                    if(dp[0][i]==b) dp[1][i] += dp[1][i-1];
+//                    if(dp[0][i]==c) dp[1][i] += dp[1][i+1];
 //                    if(dp[0][i]==d) dp[1][i]++;
 //                    if(dp[0][i]==e) dp[1][i]++;
 //                    System.out.println(a+" "+b+" "+c+" "+d+" ");
                 }else {
                     int b = dp[0][(i-1)/2]+2;
                     int c = dp[0][(i+1)/2]+2;
-//                    int d = dp[0][i-1]+1;
+                    int d = dp[0][i-1]+1;
 //                    int e = dp[0][i+1]+1;
                     
-                    dp[0][i]= Math.min(b, c);
+                    dp[0][i]= Math.min(Math.min(b, c),d);
                     
                     if(dp[0][i]==b) dp[1][i] += dp[1][(i-1)/2];
                     if(dp[0][i]==c) dp[1][i] += dp[1][(i+1)/2];
-//                    if(dp[0][i]==d) dp[1][i]++;
+                    if(dp[0][i]==d) dp[1][i] += dp[1][i-1];
 //                    if(dp[0][i]==e) dp[1][i]++;
                     
 //                    System.out.println(b+" "+c+" "+d+" ");
@@ -59,9 +59,13 @@ public class _12851_숨바꼭질2 {
 
             }
             for(int i=1;i<=K;i++) {
-                System.out.print(dp[1][i]+" ");
-                
+                System.out.print(dp[0][i]+" ");               
             }
+            System.out.println();
+            for(int i=1;i<=K;i++) {
+                System.out.print(dp[1][i]+" ");               
+            }
+            System.out.println();
             System.out.println(dp[0][K]);
             System.out.println(dp[1][K]);
 
@@ -73,4 +77,3 @@ public class _12851_숨바꼭질2 {
 
     }
 }
-

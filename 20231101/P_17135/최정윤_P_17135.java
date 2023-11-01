@@ -75,7 +75,7 @@ public class Pro_17135_캐슬디펜스 {
 			for (int i = 0; i < 3; i++) {
 				q = new PriorityQueue<Node>();
 				visited = new boolean[N][M];
-				q.add(new Node(N, select[i], 0));//N번째 궁수위치 담아서  가장 가까운 적을 찾아서 list에 담아준다.
+				q.add(new Node(N, select[i], 0));//i번째 궁수위치 담아서  가장 가까운 적을 찾아서 list에 담아준다.
 				bfs();
 			}
 			for (int i = 0; i < list.size(); i++) {//같은 적을 공격할 수 있으므로 0이 아닐 때만 제거한 적의 수를 플러스해준다.

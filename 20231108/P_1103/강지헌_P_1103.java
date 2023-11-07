@@ -41,10 +41,3 @@ public class Main {
 	}
 	
 }
-class Node {
-	int x,c;
-	Node(int x,int c) {
-		this.x=x;
-		this.c=c;
-	}
-}

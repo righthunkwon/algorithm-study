@@ -33,8 +33,8 @@ public class BOJ_Q13913_숨바꼭질4 {
 
 		visited[N] = 0; // 출발지 다시 0으로 넣어줘야됨 (0은 미방문과 같아서, bfs과정에서 다른 숫자가 들어가버린다..)
 
-		root = new int[cnt + 1]; //dfs 돌면서 경로 저장하는 배열
-		ans = new int[cnt + 1]; //정답을 저장할 배열
+		root = new int[cnt + 1]; //dfs 돌면서 경로 저장하는 배열 @@@@@@@@@@new!!
+		ans = new int[cnt + 1]; //정답을 저장할 배열 @@@@@@@@@@new!!
 		
 		dfs(0,N);
 		
@@ -52,9 +52,9 @@ public class BOJ_Q13913_숨바꼭질4 {
 	
 	// idx는 좌표, depth는 몇번째 이동중인지
 	static void dfs(int depth, int idx) {
-
-		if (depth == cnt) { 
-			if (idx == K) {
+		//기저조건
+		if (depth == cnt) { //수빈이가 동생을 찾는 가장 빠른 시간인 cnt만큼 탐색을 했을 때
+			if (idx == K) {   //동생 위치에 도착했으면
 				for (int i = 0; i < cnt + 1; i++) {
 					ans[i] = root[i]; // 제대로 도착했으면 복사
 					ans[cnt]=K;
@@ -62,57 +62,43 @@ public class BOJ_Q13913_숨바꼭질4 {
 			}
 			return;
 		}
-		
-		root[depth]=idx;
-		
-		if(idx+1<=100000 && visited[idx+1]==visited[idx]+1) {
+		root[depth]=idx;  //dfs(0,N) 해서 수빈 위치에서 출발
+		if(idx+1<=100000 && visited[idx+1]==visited[idx]+1) { //범위 안이고 기존 idx에 가는데 걸린 시간보다 idx+1로 가는 시간이 1 더 걸리면 유효한 루트!
 			dfs(depth+1,idx+1);
 		}
-		if(idx-1>=0 && visited[idx-1]==visited[idx]+1) {
+		if(idx-1>=0 && visited[idx-1]==visited[idx]+1) { //범위 안이고 기존 idx에 가는데 걸린 시간보다 idx-1로 가는 시간이 1 더 걸리면 유효한 루트!
 			dfs(depth+1,idx-1);
 		}
-		if(idx*2<=100000 && visited[idx*2]==visited[idx]+1) {
+		if(idx*2<=100000 && visited[idx*2]==visited[idx]+1) { //범위 안이고 기존 idx에 가는데 걸린 시간보다 idx*2로 가는 시간이 1 더 걸리면 유효한 루트!
 			dfs(depth+1,idx*2);
 		}
-
 	}
-
+	
 	// 위치를 인자로 받는 bfs
 	// N => K 로 가는 최소시간 구하기
-	static void bfs() {
-
+	static void bfs() { 
 		queue.add(N); // 수빈 현 위치 큐에 삽입
 		visited[N] = 0;
-
 		while (!queue.isEmpty()) {
 			int t = queue.poll(); // 하나 꺼냄
-
 			if (t == K) {
 				cnt = visited[t];
 				return;
 			}
-
 			// X-1 / X+1 / X*2 가 각각 범위 안에 있고 아직 방문안했으면
 			// t까지 걸린시간 +1을 그 위치까지 가는데 걸린 시간으로 넣어주고, 큐에 삽입
 			if (t + 1 <= 100000 && visited[t + 1] == 0) {
 				visited[t + 1] = visited[t] + 1;
 				queue.add(t + 1);
-
 			}
 			if (t - 1 >= 0 && visited[t - 1] == 0) {
 				visited[t - 1] = visited[t] + 1;
 				queue.add(t - 1);
-
 			}
 			if (t * 2 <= 100000 && visited[t * 2] == 0) {
 				visited[t * 2] = visited[t] + 1;
 				queue.add(t * 2);
-
 			}
-
 		}
-
 	}// bfs
-
-
 }// class

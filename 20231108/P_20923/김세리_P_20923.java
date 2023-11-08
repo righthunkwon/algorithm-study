@@ -54,12 +54,12 @@ public class _20923_숫자할리갈리게임 {
             // 합이 5일 땐 수연이가 카드 먹는다
             if(!sudumy.isEmpty() && !dodumy.isEmpty()) {
                 int temp = sudumy.peekLast(); // 더미 방향에서 끝부분이 맨 위에 위치한 카드이므로 peekLast사용한다
-                if(a + temp == 5) { // 뽑은 수랑 위에 있는 수
-                	while(!dodumy.isEmpty()) {
+                if(a + temp == 5) { // 뽑은 수랑 위에 있는 수를 합해서 5인지 판단한다
+                	while(!dodumy.isEmpty()) { // 도도꺼 먼저 먹는다
                     	int tmp = dodumy.poll();
                     	sudq.add(tmp);
                     }
-                	while(!sudumy.isEmpty()) {
+                	while(!sudumy.isEmpty()) { // 그다음 수연이꺼
                     	int tmp = sudumy.poll();
                     	sudq.add(tmp);
                     }
@@ -71,7 +71,7 @@ public class _20923_숫자할리갈리게임 {
 //            System.out.println("sudumy:" + sudumy);
             // 횟수 추가
             cnt++;
-            if(cnt==M) break;
+            if(cnt==M) break; // cnt가 M이 되면 나간다
 
             // 그다음 수연이 차례
             int b = sudq.poll();

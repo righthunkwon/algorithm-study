@@ -46,29 +46,29 @@ public class BOJ_20923_숫자할리갈리게임 {
 		 */
 		while(M > 0) {
 			// 도도 턴
-			dodo = dodeq.pollFirst();
-			doground.add(dodo);
+			dodo = dodeq.pollFirst(); // 도도의 덱에서 제일 위에 있는 카드 꺼내기 (처음 넣을때 addFirst 했음)
+			doground.add(dodo); // 꺼낸 카드를 그라운드에 addLast
 			if(youwin()) return; // 카드내고 비었으면 상대방 승
 			
-			if(dodo == 5) doget();
-			else if(suground.size() > 0 && dodo + suground.get(suground.size()-1) == 5) suget();
+			if(dodo == 5) doget(); // 도도가 꺼낸 카드가 5라면 도도가 가져가기
+			else if(suground.size() > 0 && dodo + suground.get(suground.size()-1) == 5) suget(); // 그렇지 않고, 두 카드 합이 5라면 수..가 가져가기
 			
 			// 한 턴 끝
 			M--;
 			if(M == 0) break;
 			
 			// 수 머시기 턴
-			su = sudeq.pollFirst();
-			suground.add(su);
-			if(youwin()) return;
+			su = sudeq.pollFirst(); // 수.. 덱에서 제일 위에 있는 카드 꺼내기 (처음 넣을때 addFirst 했음)
+			suground.add(su); // 꺼낸 카드를 그라운드에 addLast
+			if(youwin()) return; // 카드내고 비었으면 상대방 승
 			
-			if(su == 5) doget();
-			else if(doground.size() > 0 && su + doground.get(doground.size()-1) == 5) suget();
+			if(su == 5) doget(); // 수..가 꺼낸 카드가 5라면 도도가 가져가기
+			else if(doground.size() > 0 && su + doground.get(doground.size()-1) == 5) suget(); // 그렇지 않고, 두 카드 합이 5라면 수..가 가져가기
 			
 			M--;
 			
 		}
-		
+		// 게임이 끝났으면 덱에 더 많은 카드 가진놈이 승리, 같으면 dosu
 		if(dodeq.size() == sudeq.size()) System.out.println("dosu");
 		else {
 			if(dodeq.size() > sudeq.size()) System.out.println("do");
@@ -86,7 +86,9 @@ public class BOJ_20923_숫자할리갈리게임 {
 		}
 		return false;
 	}
-	
+
+	// 카드를 가져갈 땐 상대방 ground에 있는 카드부터 뒤집어서 밑에 쌓는다
+	// 그라운드 List의 0번 인덱스가 가장 밑에 있는 카드(먼저 낸 카드)
 	// 도도가 가져가기
 	static void doget() {
 		while(!suground.isEmpty()) dodeq.addLast(suground.remove(0));

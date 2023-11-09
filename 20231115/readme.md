@@ -1,7 +1,7 @@
 ### 김도형
 문제: 28088번 (응애(EASY)) <br/>
 등급: 실버4 <br/>
-링크: [28088번(응애(EASY))](https://www.acmicpc.net/problem/28088 <br/>
+링크: [28088번(응애(EASY))](https://www.acmicpc.net/problem/28088) <br/>
 <br/>
 
 ### 권정훈

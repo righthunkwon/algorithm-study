@@ -1,36 +1,29 @@
+import java.io.*;
 import java.util.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class Main {
-	private static final BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-	public static void main(String[] args) throws IOException {
-		int N = Integer.parseInt(bf.readLine());
-		int hap=0,max=0,d1=-1,d2=-1;
-		int[] arr = new int[N];
-		int[] brr = new int[8001];
-		for(int i=0;i<N;i++) {
-			arr[i] = Integer.parseInt(bf.readLine());
-			hap+=arr[i];
-			brr[arr[i]+4000]++;
+	static int N,M,C;
+	static int[] arr,brr;
+	public static void main(String [] args) throws IOException {
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N=Integer.parseInt(st.nextToken());
+		M=Integer.parseInt(st.nextToken());
+		C=Integer.parseInt(st.nextToken());
+		arr=new int[N];
+		brr=new int[N];
+		for(int i=0;i<M;i++) {
+			int t=Integer.parseInt(br.readLine());
+			arr[t]=1;
 		}
-		Arrays.sort(arr);
-		for(int i=0;i<=8000;i++) {
-			if(max<brr[i]) {
-				max=brr[i];
-				d1=i;
-				d2=-1;
-			}
-			else if(max==brr[i] && d2==-1) {
-				d2=i;
-			}
+		for(int i=0;i<C;i++) {
+			brr[0]=(arr[1]+arr[N-1])%2;
+			brr[N-1]=(arr[N-2]+arr[0])%2;
+			for(int j=1;j<N-1;j++) brr[j]=(arr[j-1]+arr[j+1])%2;
+			arr=brr.clone();
 		}
-		if(d2!=-1) {
-			d1=d2;
-		}
-		double d = hap/(double)N;
-		if(d>-0.5 && d<0) d=0.1;
-		System.out.printf("%.0f\n%d\n%d\n%d",d,arr[N/2],d1-4000,arr[N-1]-arr[0]);
+		int ans=0;
+		for(int i=0;i<N;i++) if(arr[i]==1) ans++;
+		System.out.println(ans);
 	}
 }

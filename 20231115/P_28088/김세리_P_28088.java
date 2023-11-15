@@ -21,6 +21,8 @@ public class _28088_응애_EASY {
         }
         int cnt=0;
         while(cnt<K) {
+        	// arr을 카피해서 거기 있는 값을 바꾼다
+        	// arr값을 바꾸면 그 뒤에 답에 오류가 생기기 때문
             arrCopy = arr.clone();
             for(int i=0;i<N;i++) {
                 if(arr[i]==1) arrCopy[i]=0;
@@ -34,6 +36,8 @@ public class _28088_응애_EASY {
             
             if(arr[N-2]==1 || arr[0]==1) arrCopy[N-1]=1;
             if(arr[N-2]==1 && arr[0]==1) arrCopy[N-1]=0;
+            
+            //문제에서 주어진 조건에 의해 바뀐 arrCopy를 arr로 다시 카피한다
             arr = arrCopy.clone();
             cnt++;
         }

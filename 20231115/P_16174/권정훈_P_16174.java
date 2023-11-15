@@ -8,7 +8,6 @@ import java.util.StringTokenizer;
 public class P_16174 {
 
 	private static int n;
-	private static boolean flag;
 	private static int map[][];
 	private static boolean visited[][];
 
@@ -32,12 +31,8 @@ public class P_16174 {
 			}
 		}
 		
-
-		flag = false; // 도착지 도착 여부
-		dfs(0, 0); // dfs
-		
-		if (flag) System.out.println("HaruHaru");
-		else System.out.println("Hing");
+		dfs(0, 0);
+		System.out.println("Hing");
 	}
 
 	private static void dfs(int x, int y) {
@@ -45,8 +40,11 @@ public class P_16174 {
 		int pos = map[x][y];
 		
 		// 현재 위치가 도착지인 경우
-		if (pos == -1) flag = true;
-
+		if (pos == -1) {
+			System.out.println("HaruHaru");
+			System.exit(0);
+		}
+			
 		for (int i = 0; i < 2; i++) {
 			int nx = x + dx[i] * pos;
 			int ny = y + dy[i] * pos;

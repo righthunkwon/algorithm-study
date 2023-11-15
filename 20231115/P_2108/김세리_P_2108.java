@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class _2108_통계학2 {
+public class _2108_통계학 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -30,7 +30,7 @@ public class _2108_통계학2 {
         boolean isSecond = false;
 
         for (int i=0; i<N; i++) {
-            check[arr[i] + 4000]++; // 값이 -4000 ~ 4000 이므로, 4000을 더한다
+            check[arr[i] + 4000]++; // 값이 -4000 ~ 4000 이므로, 4000을 더한다.
             if (check[arr[i] + 4000] > maxFreq) {
                 maxFreq = check[arr[i] + 4000];
                 maxFreqValue = arr[i];

@@ -19,6 +19,7 @@ public class Pro_2108_통계학 {
 //여기부터 최빈값 구하기...
 		int[][] arr = new int[2][4001];// 행 0: 음수 /1: 양수
 		int max = 0;
+		//그 칸의 값을 +1시키면서 max 값 구해놓기
 		for (int i = 0; i < N; i++) {
 			int num = list.get(i);
 			if (num > 0) {
@@ -29,6 +30,7 @@ public class Pro_2108_통계학 {
 				max = Math.max(max, arr[0][-num]);
 			}
 		}
+		//max값인지 확인 => 최빈값이 여러개면 두번째로 작은 수 출력해야하기 때문에 for문 -4000부터 돌고 cnt가 2이면 종료
 		int cnt = 0;
 		int many = 4001;
 		for (int i = 4000; i >= 0; i--) {

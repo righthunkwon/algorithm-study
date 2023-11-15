@@ -28,7 +28,7 @@ public class _17086_아기상어2 {
 			for(int j=0;j<M;j++) {
 				int a = Integer.parseInt(s.nextToken());
 				map[i][j] = a;
-				if(a==1) q.add(new int[] {i,j});
+				if(a==1) q.add(new int[] {i,j}); //q에다가 상어위치 넣는다
 			}
 		}//입력끝
 		bfs();
@@ -36,7 +36,7 @@ public class _17086_아기상어2 {
 	}//main
 	static void bfs() {
 		int cnt =0;
-		while(!q.isEmpty()) {
+		while(!q.isEmpty()) { //상어위치 빼서 거리 구한다
 			int[]now = q.poll();
 			for(int i=0;i<8;i++) {
 				int nr = now[0]+dr[i];

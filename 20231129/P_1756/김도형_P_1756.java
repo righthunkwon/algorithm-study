@@ -10,7 +10,7 @@ public class BOJ_Q1756_피자_굽기 {
 	public static void main(String[] args) throws IOException {
 
 		
-		//가장 큰 피자를 구하고 그 위치를 구하면 된다!
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int D = Integer.parseInt(st.nextToken()); // 오븐이 깊이 D

@@ -36,27 +36,27 @@ public class Main {
 		chk[t]=false;
 		dfs(t+1);
 	}
-	private static boolean check(boolean flag) {
-		boolean isVisited[]=new boolean[N+1];
-		LinkedList<Integer> Q=new LinkedList<Integer>();
+	private static boolean check(boolean f) {
+		boolean c[]=new boolean[N+1];
+		LinkedList<Integer> Q=new LinkedList<>();
 		for(int i=1;i<=N;i++) {
-			if(chk[i]==flag) {
+			if(chk[i]==f) {
 				Q.addLast(i);
-				isVisited[i]=true;
+				c[i]=true;
 				break;
 			}
 		}
 		while (!Q.isEmpty()) {
 			int n=Q.pollFirst();
 			for(int i=1;i<=N;i++) {
-				if(isVisited[i] || flag != chk[i]) continue;
+				if(c[i] || f!=chk[i]) continue;
 				if(map[n][i]==1) {
 					Q.addLast(i);
-					isVisited[i]=true;
+					c[i]=true;
 				}
 			}
 		}
-		for(int i=1;i<=N;i++) if(chk[i]==flag && !isVisited[i]) return false;
+		for(int i=1;i<=N;i++) if(chk[i]==f && !c[i]) return false;
 		return true;
 	}
 }

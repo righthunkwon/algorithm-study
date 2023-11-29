@@ -26,7 +26,6 @@ public class Main {
 				}
 			}
 		}
-		if(t!=N) System.out.println(0);
-		else System.out.println(ans);
+		System.out.println(t!=N?0:ans);
 	}
 }

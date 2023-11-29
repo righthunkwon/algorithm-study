@@ -40,10 +40,8 @@ public class Pro_17471_게리멘더링 {
 		}
 		
 		//결과출력
-		if (min == Integer.MAX_VALUE)
-			System.out.println(-1);
-		else
-			System.out.println(min);
+		if (min == Integer.MAX_VALUE)   System.out.println(-1);
+		else  System.out.println(min);
 	}
 
 	private static void select(int idx, int sidx, int i) {
@@ -51,10 +49,8 @@ public class Pro_17471_게리멘더링 {
 			if (div()) {// true라면 두 선거구를 나눈 조합이 가능한 방법이므로 두 선거구에 포함된 인구의 차이를 구한다.
 				int sum = 0;
 				for (int j = 0; j < N; j++) {
-					if (select[j] == 0)
-						sum += p[j];
-					else
-						sum -= p[j];
+					if (select[j] == 0)  sum += p[j];
+					else sum -= p[j];
 				}
 				if (min > Math.abs(sum)) {
 					min = Math.abs(sum);
@@ -112,5 +108,4 @@ public class Pro_17471_게리멘더링 {
 			}
 		}
 	}
-
 }

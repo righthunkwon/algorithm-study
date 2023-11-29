@@ -7,7 +7,6 @@ public class Main {
 		int M=Integer.parseInt(st.nextToken());
 		int N=Integer.parseInt(st.nextToken());
 		int arr[]=new int[M];
-		boolean[] v=new boolean[M];
 		int[] p=new int[N];
 		st=new StringTokenizer(br.readLine());
 		for(int i=0;i<M;i++) {
@@ -20,7 +19,6 @@ public class Main {
 		for(int i=0;i<N;i++) {
 			for(;j>=0;j--) {
 				if(arr[j]>=p[i]) {
-					v[j]=true;
 					ans=j+1;
 					t++;
 					j--;

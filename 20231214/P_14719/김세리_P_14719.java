@@ -22,7 +22,6 @@ public class _14719_빗물 {
 				}
 			}
 		}//입력끝
-		System.out.println(Arrays.deepToString(arr));
 		int rain=0;
 		//아래서부터 시작해서 하나씩 위로 올라간다
 		for(int i=H-1;i>=0;i--) {
@@ -39,7 +38,6 @@ public class _14719_빗물 {
 				else if(arr[i][j]==1 && a!=-1) {
 					b=j;
 					rain +=b-a-1;
-					System.out.println(b+" "+a+" rain: "+rain);
 					a=j;
 				}
 			}

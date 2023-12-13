@@ -36,10 +36,8 @@ public class Pro_14719_빗물 {
 		// 두개중 min 값이 빗물이 쌓일 수 있는 높이이다.(각 인덱스 별로)
 		int rain = 0;
 		for (int i = 0; i < W; i++) {
-			if (arr[i] >= Math.min(left_h[i], right_h[i])) {
-				rain += 0;
-			} else {
-				rain += Math.min(left_h[i], right_h[i]) - arr[i];
+			if (arr[i] < Math.min(left_h[i], right_h[i])) {
+			     rain += Math.min(left_h[i], right_h[i]) - arr[i];
 			}
 		}
 		System.out.println(rain);

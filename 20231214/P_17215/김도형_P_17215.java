@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 //그림 링크
-//https://postimg.cc/34fkYJLd/bd72fd4b
+//https://i.postimg.cc/qq4ycNyX/image.png
 public class BOJ_Q17215_볼링점수계산 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

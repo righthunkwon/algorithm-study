@@ -1,11 +1,7 @@
 package AlgoStudy;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class BOJ_Q16236_아기_상어 {
 	static int[]dx= {-1,0,0,1};
@@ -42,11 +38,11 @@ public class BOJ_Q16236_아기_상어 {
 		cnt =0; //현재 먹은 물고기 수 초기화
 		while(true) {
 			bfs(nx,ny);
-			if(flag==false)break;
+			if(flag==false)break; //먹을 물고기 없으면 break
 		}
 		System.out.println(totaltime);
-	
 	}//main
+	
 	//아기상어의 현재 위치 x y / 아기상어의 현재 크기 size / 현 사이즈에서 먹은 먹이 수 cnt
 	public static void bfs(int x,int y) { 
 		//상,좌,우,하 순으로 탐색하다가 먹을 수 있는거 나오면 break해준다!

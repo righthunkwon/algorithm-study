@@ -39,8 +39,8 @@ public class Main {
 		if (idx == k)
 			return;
 		select[sidx] = lotto[idx];
-		select(idx + 1, sidx + 1);
-		select(idx + 1, sidx);
+		select(idx + 1, sidx + 1);//선택
+		select(idx + 1, sidx);//미선택
 	}
 
 	public static void print() {

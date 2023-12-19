@@ -1,59 +1,47 @@
 import java.io.*;
 import java.util.*;
 public class Main {
-	static int N;
-	static int[][] xy={{1,0},{0,1},{0,-1},{-1,0}};
-	static ArrayList<int[]> T;
-	static char[][] map;
-	public static void main(String[] args) throws IOException {
-		BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
-		N=Integer.parseInt(in.readLine());
-		StringTokenizer st;
-		map=new char[N][N];
-		T=new ArrayList<>();
-		for(int i=0;i<N;i++){
-			st=new StringTokenizer(in.readLine());
-			for(int j=0;j<N;j++){
-				map[i][j]=st.nextToken().charAt(0);
-				if(map[i][j]=='T') T.add(new int[]{i,j});
-			}
+	public static void main(String[] args) throws IOException{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		Scanner sc=new Scanner(System.in);
+		ArrayList<Integer> li=new ArrayList<>();
+		int N=Integer.parseInt(st.nextToken());
+		int M=Integer.parseInt(st.nextToken());
+		int ans=M;
+		ArrayList<Integer>[] arr=new ArrayList[M];
+		for(int i=0;i<M;i++) arr[i]=new ArrayList<>();
+		st=new StringTokenizer(br.readLine());
+		int p=Integer.parseInt(st.nextToken());
+		Queue<Integer> Q=new LinkedList<>();
+		for(int i=0;i<p;i++) li.add(Integer.parseInt(st.nextToken()));
+		for(int i=0;i<M;i++) {
+			st=new StringTokenizer(br.readLine());
+			p=Integer.parseInt(st.nextToken());
+			for(int j=0;j<p;j++) arr[i].add(Integer.parseInt(st.nextToken()));
 		}
-		dfs(0,0,0);
-		System.out.println("NO");
-	}
-	private static void dfs(int cnt,int x,int y){
-		if(cnt==3) {
-			if(check()) {
-				System.out.println("YES");
-				System.exit(0);
-			}
-			return;
+		
+		int[] pachk=new int[M];
+		int[] pechk=new int[N+1];
+		for(int i=0;i<li.size();i++) {
+			Q.add(li.get(i));
+			pechk[li.get(i)]=1;
 		}
-		int dy;
-		for(int dx=x;dx<N;dx++) {
-			if(dx==x) dy=y+1;
-			else dy=0;
-			for(;dy<N;dy++) {
-				if(map[dx][dy]=='X'){
-					map[dx][dy]='O';
-					dfs(cnt+1,dx,dy);
-					map[dx][dy]='X';
+		while(!Q.isEmpty()) {
+			int t=Q.poll();
+			for(int i=0;i<M;i++) {
+				if(pachk[i]==1) continue;
+				if(!arr[i].contains(t)) continue;
+				for(int j=0;j<arr[i].size();j++) {
+					int next=arr[i].get(j);
+					if(pechk[next]==1) continue;
+					pechk[next]=1;
+					Q.add(next);
 				}
+				pachk[i]=1;
+				ans--;
 			}
 		}
-	}
-	private static boolean check(){
-		for(int[] i:T) {
-			for(int[] j:xy) {
-				int dx=i[0],dy=i[1];
-				while(true){
-					dx+=j[0]; dy+=j[1];
-					if(dx<0 || dx>=N || dy<0 || dy>=N) break;
-					if(map[dx][dy]=='S') return false;
-					else if(map[dx][dy]=='O') break;
-				}
-			}
-		}
-		return true;
+		System.out.println(ans);
 	}
 }

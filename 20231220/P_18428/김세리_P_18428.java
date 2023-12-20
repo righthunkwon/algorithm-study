@@ -70,6 +70,7 @@ public class _18428_감시피하기 {
                 }
             }
         }
+        // 안만나면 true
         return true;
     }
 

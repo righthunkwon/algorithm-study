@@ -17,6 +17,6 @@ public class Main {
 			}
 			ans=Math.max(ans,dy[i]);
 		}
-		System.out.println(ans+"\n");
+		System.out.println(ans);
 	}
 }

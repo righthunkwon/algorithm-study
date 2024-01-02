@@ -33,7 +33,7 @@ static ArrayList<Order> ar = new ArrayList<Order>();
 			int dir = change(sc.next());
 			// 좌표를 입력받아서 x좌표만 거꾸로해서 
 			// 값을 i+1로 각각 설정해줌(로봇마다 각각 알기위해)
-			arr[(M-x)+1][N] = i+1;
+			arr[(M-x)+1][y] = i+1;
 			robot[i+1] = new Robot((b-x)+1,y,dir);
 		}
 		
@@ -47,9 +47,9 @@ static ArrayList<Order> ar = new ArrayList<Order>();
 		}
 
 		solve();
-		// 전체다 이상없이 수행했으면
-		// ok출력
-		System.out.println("OK");
+//		// 전체다 이상없이 수행했으면
+//		// ok출력
+//		System.out.println("OK");
 	}
 	static int dx[] = {0,-1,0,1,0};
 	static int dy[] =  {0,0,1,0,-1};
@@ -112,7 +112,7 @@ static ArrayList<Order> ar = new ArrayList<Order>();
 				}
 			}
 		}
-		return;
+		 System.out.println("OK");
 	}
 	// 입력되는 방향을 숫자로 전환
 		// 북 동 남 서 순서대로 1234
@@ -130,7 +130,7 @@ static ArrayList<Order> ar = new ArrayList<Order>();
 		}
 		// 로봇의 위치가 범위내에 위치하는지 
 		public static boolean isRange(int x, int y) {
-			if(x>=1 && y>=1 && x<=N && y<=M) {
+			if(x>=1 && y>=1 && x<=M && y<=N) {
 				return true;
 			}
 			return false;

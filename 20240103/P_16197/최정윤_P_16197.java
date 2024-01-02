@@ -30,21 +30,19 @@ public class Pro_16197_두동전 {
 		dfs(1);
 		if (min == Integer.MAX_VALUE)
 			System.out.println(-1);
-		else {
-			System.out.println(min);
-		}
+		else System.out.println(min);
+		
 	}
 
 	private static void dfs(int depth) {
-		if (depth == 11 || depth >= min)
-			return;
-		if (coin.get(0)[0] == coin.get(1)[0] && coin.get(0)[1] == coin.get(1)[1]) {
-			return;
-		}
+		if (depth == 11 || depth >= min) return;//10회 이상
+		if (coin.get(0)[0] == coin.get(1)[0] && coin.get(0)[1] == coin.get(1)[1]) return;//두 동전의 위치가 같다면
+		
 		int[] coin1 = coin.get(0);//코인의 좌표를 저장해두자,dfs로 들어가면 coin이 바뀔 수 있다.
 		int[] coin2 = coin.get(1);
 		for (int i = 0; i < 4; i++) {
 			int out = 0;
+			
 			// 첫번째 동전 옮기기
 			int nr = coin1[0] + dr[i];
 			int nc = coin1[1] + dc[i];
@@ -54,8 +52,8 @@ public class Pro_16197_두동전 {
 				coin.set(0, new int[] { nr, nc });
 			} else {//벽이라면 그대로 다시 세팅
 				coin.set(0, new int[] { coin1[0], coin1[1] });
-
 			}
+			
 			// 두번째 동전 옮기기
 			nr = coin2[0] + dr[i];
 			nc = coin2[1] + dc[i];
@@ -65,13 +63,13 @@ public class Pro_16197_두동전 {
 				coin.set(1, new int[] { nr, nc });
 			} else {
 				coin.set(1, new int[] { coin2[0], coin2[1] });
-
 			}
+			
 			if (out == 1) {//한개의 동전만 떨어지면 최솟값 갱신, 다른 방향으로 가보기 
 				min = Math.min(depth, min);
 				continue;
-			} else if (out == 2)//둘다 떨어지면 한개만 떨어지기 불가능 , 다른 방향 탐색
-				continue;
+			} else if (out == 2) continue; //둘다 떨어지면 한개만 떨어지기 불가능 , 다른 방향 탐색
+			
 			dfs(depth + 1);//다시 반복
 		}
 

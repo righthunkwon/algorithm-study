@@ -36,10 +36,7 @@ public class Main {
 						for(int l=0;l<4;l++) {
 							int dx=i+find[k][0][l], dy=j+find[k][1][l];
 							if(dx>=0 && dx<N && dy>=0 && dy<N) sum+=map[dx][dy];
-							else {
-								f=true;
-								break;
-							}
+							else f=true;
 						}
 						if(!f) max=Math.max(max, sum);
 					}

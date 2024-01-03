@@ -94,3 +94,133 @@ public class _4920_테트리스게임2 {
         }
     }
 }
+
+    // 이전에 테트로미노 풀었던 dfs 방식은 이 문제에서 사용할 수 없다
+    // 90도 회전을 통해 나온 블록모양만 사용할 수 있기 때문이다
+    
+//    static void solve(int x, int y, int sum, int cnt) {
+//        if(cnt==4) {
+//            max = Math.max(max, sum);
+//            return;
+//        }
+//        
+//        for(int i=0;i<4;i++) {
+//            int nr = x + dr[i];
+//            int nc = y + dc[i];
+//            if(nr<0 || nr>=N || nc<0 || nc>=N) continue;
+//            if(!visited[nr][nc]) {
+//                if(cnt==2) {
+//                    visited[nr][nc]=true;
+//                    solve(x,y,sum+arr[nr][nc],cnt+1);
+//                    visited[nr][nc]=false;
+//                }
+//                visited[nr][nc]=true;
+//                solve(nr,nc,sum+arr[nr][nc],cnt+1);
+//                visited[nr][nc]=false;
+//            }
+//        }
+//    }//solve
+
+// 아래꺼 25퍼에서 계속 틀리는데 왜틀리는지 모르겠음ㅜㅜㅜㅜㅜㅜ
+/////////////////////////////////////////////////////////////////////////////////////////
+//public class _4920_테트리스게임 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringBuilder sb = new StringBuilder();
+//        int N=100;
+//        int tc=0;
+//        out: while(N!=0){
+//            tc++;
+//            N = Integer.parseInt(br.readLine().trim());
+//            if(N==0) break out;
+//            int[][] arr = new int[N][N];
+//            for(int i=0;i<N;i++) {
+//                StringTokenizer st = new StringTokenizer(br.readLine());
+//                for(int j=0;j<N;j++) {
+//                    arr[i][j] = Integer.parseInt(st.nextToken());
+//                }
+//            }
+//            int max=-987654321;
+//            
+//            for(int i=0;i<N;i++) {
+//                for(int j=0;j<N;j++) {
+//                    int sum1=0,sum2=0,sum3=0,sum4=0,sum5=0,sum6=0,sum7=0,sum8=0;
+//                    int sum9=0,sum10=0,sum11=0,sum12=0,sum13=0;
+//                    if(j+3<N) { // ㅡ
+//                        sum1 += arr[i][j]+arr[i][j+1]+arr[i][j+2]+arr[i][j+3];
+//                    }
+//                    max = Math.max(max, sum1);
+//                    
+//                    if(i+3<N) { // ㅣ
+//                        sum2 += arr[i][j]+arr[i+1][j]+arr[i+2][j]+arr[i+3][j];
+//                    }
+//                    max = Math.max(max, sum2);
+//                    
+//                    if(i+1<N && j+2<N) {  // Z
+//                        sum3 += arr[i][j]+arr[i][j+1]+arr[i+1][j+1]+arr[i+1][j+2];
+//                    }
+//                    max = Math.max(max, sum3);
+//                    
+//                    if(i+2<N && j-1>=0) { // Z 90도회전
+//                        sum4 += arr[i][j]+arr[i+1][j]+arr[i+1][j-1]+arr[i+2][j-1];
+//                    }
+//                    max = Math.max(max, sum4);
+//                    
+//                    if(i+1<N && j+2<N) { // ㄱ
+//                        sum5 += arr[i][j]+arr[i][j+1]+arr[i][j+2]+arr[i+1][j+2];
+//                    }
+//                    max = Math.max(max, sum5);
+//                    
+//                    if(i+2<N && j-1>=0) { // ㄱ 90도 회전
+//                        sum6 += arr[i][j]+arr[i+1][j]+arr[i+2][j]+arr[i+2][j-1];
+//                    }
+//                    max = Math.max(max, sum6);
+//                    
+//                    if(i+1<N && j+2<N) { // ㄱ 180도 회전
+//                        sum7 += arr[i][j]+arr[i+1][j]+arr[i+1][j+1]+arr[i+1][j+2];
+//                    }
+//                    max = Math.max(max, sum7);
+//                    
+//                    if(i+2<N && j+1<N) { // ㄱ 270도 회전
+//                        sum8 += arr[i][j]+arr[i][j+1]+arr[i+1][j]+arr[i+2][j];
+//                    }
+//                    max = Math.max(max, sum8);
+//                    
+//                    if(i+1<N && j+2<N) { // ㅜ
+//                        sum9 += arr[i][j]+arr[i][j+1]+arr[i][j+2]+arr[i+1][j+1];
+//                    }
+//                    max = Math.max(max, sum9);
+//                    
+//                    if(i+2<N && j-1>=0) { //ㅓ
+//                        sum10 += arr[i][j]+arr[i+1][j]+arr[i+2][j]+arr[i+1][j-1];
+//                    }
+//                    max = Math.max(max, sum10);
+//                    
+//                    if(i-1>=0 && j+2<N) { // ㅗ
+//                        sum11 += arr[i][j]+arr[i-1][j+1]+arr[i][j+1]+arr[i][j+2];
+//                    }
+//                    max = Math.max(max, sum11);
+//                    
+//                    if(i+2<N && j+1<N) { // ㅏ
+//                        sum12 += arr[i][j]+arr[i+1][j]+arr[i+2][j]+arr[i+1][j+1];
+//                    }
+//                    max = Math.max(max, sum12);
+//                    
+//                    if(i+1<N && j+1<N) { // ㅁ
+//                        sum13 += arr[i][j]+arr[i][j+1]+arr[i+1][j]+arr[i+1][j+1];
+//                    }
+//                    max = Math.max(max, sum13);
+//                    
+//                }
+//            }
+//            
+//            sb.append(tc+". "+max);
+//            sb.append("\n");
+//            
+//        }//T
+//        System.out.println(sb);
+//        
+//        
+//        
+//    }//main
+//}

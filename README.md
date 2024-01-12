@@ -40,6 +40,7 @@
     <td align="center"><a href="https://github.com/hajaeryul"><img src="https://avatars.githubusercontent.com/u/113097210?v=4" width="130px;" alt=""></a></td>
     <td align="center"><a href="https://github.com/jungyounn"><img src="https://avatars.githubusercontent.com/u/141210401?v=4" width="130px;" alt=""></a></td>
     <td align="center"><a href="https://github.com/onid057"><img src="https://avatars.githubusercontent.com/u/141606477?v=4" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/FezzK"><img src="https://avatars.githubusercontent.com/u/11494960?v=4" width="130px;" alt=""></a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/righthunkwon"><b>righthunkwon</b></a></td>
@@ -48,8 +49,10 @@
     <td align="center"><a href="https://github.com/hajaeryul"><b>hajaeryul</b></a></td>
     <td align="center"><a href="https://github.com/jungyounn"><b>jungyounn</b></a></td>
     <td align="center"><a href="https://github.com/onid057"><b>onid057</b></a></td>
+    <td align="center"><a href="https://github.com/onid057"><b>FezzK</b></a></td>
   </tr>
   <tr> 
+    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
@@ -74,6 +77,8 @@
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=janet1015)](https://solved.ac/janet1015)
 ##### onid057
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=yerioo)](https://solved.ac/yerioo)
+##### wlgjs2353
+[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=wlgjs2353)](https://solved.ac/wlgjs2353)
 
  
 <br/>

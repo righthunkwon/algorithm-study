@@ -1,7 +1,6 @@
 package level_31_dfs_bfs;
 
 // 미네랄
-// 모두들 고생했다!
 public class P_2933 {
 	private static int R, C, N;
 	private static char[][] map;

@@ -1,3 +1,6 @@
+// https://nahwasa.com/entry/%EC%9E%90%EB%B0%94-%EB%B0%B1%EC%A4%80-24513-%EC%A2%80%EB%B9%84-%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4-boj-java
+// 여기 풀이 참고하였음. 잘 정리되어있으니까 한번 보세요
+
 package _20240117;
 
 import java.util.*;

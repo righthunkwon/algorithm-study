@@ -12,15 +12,16 @@ class Pos {
 	}
 }
 
-public class _24513_좀비바이러스 {
+public class _24513_좀비바이러스4 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken());
 		int M = Integer.parseInt(st.nextToken());
-		int[][] answer = new int[N][M];
-		int[][][] map = new int[2][N][M];
+		int[][] answer = new int[N][M]; // 바이러스 타입 저장
+		int[][][] map = new int[2][N][M]; // [바이러스-1][위치][위치] = 도달 시간(깊이)저장
+
 		// map을 일단 최대수로 다 채운다
 		for (int i = 0; i < 2; i++) {
 			for (int j = 0; j < N; j++) {
@@ -36,10 +37,10 @@ public class _24513_좀비바이러스 {
 					answer[i][j] = -1;
 					break;
 				case 1 : //1일 때 바이러스는 0으로 저장
-				q.add(new Pos(i, j, 0));
-				answer[i][j] = 1;
-				map[0][i][j] = 1; // 시간 1로 설정
-				break;
+					q.add(new Pos(i, j, 0));
+					answer[i][j] = 1;
+					map[0][i][j] = 1; // 시간 1로 설정
+					break;
 				case 2 : //2일 때 바이러스는 1로 저장
 					q.add(new Pos(i, j, 1));
 					answer[i][j] = 2;
@@ -60,6 +61,7 @@ public class _24513_좀비바이러스 {
 
 				int type = cur.type; // 현재 위치 바이러스 타입 저장
 				if (nr<0||nr>=N||nc<0||nc>=M||answer[nr][nc]==-1||map[type][nr][nc]!=Integer.MAX_VALUE) continue;
+				
 				int nd = map[type][cur.r][cur.c]+1;
 				// 1- 현재 바이러스 타입 = 다른 바이러스 타입 을 의미함
 				// 그래서 두 타입의 거리가 같다면 3번 바이러스가 된다
@@ -69,8 +71,9 @@ public class _24513_좀비바이러스 {
 				}
 				// 아닌 경우엔 continue;
 				if (map[1-type][nr][nc]<nd) continue;
-				
+
 				// 답을 저장하는 데에는 type+1을 해서 원래 바이러스 타입으로 저장한다
+				// 원래 바이러스 타입은 map에 적힌 타입+1의 값이므로
 				answer[nr][nc] = type+1;
 				// 그리고 현재 바이러스와 시점의 거리(걸린시간)를 map에 저장한다
 				map[type][nr][nc] = nd;

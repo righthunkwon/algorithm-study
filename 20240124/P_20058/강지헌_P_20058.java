@@ -86,18 +86,18 @@ public class Main {
         }
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (map[i][j] > 0) { //현재 위치의 얼음이 0보다 큰 경우에만
+                if (map[i][j] > 0) {
                     int cnt = 0;
-                    for (int k = 0; k < 4; k++) { //인접한 구역에 얼음이 있는지 확인
+                    for (int k = 0; k < 4; k++) {
                         int dx = i + dxy[k][0];
                         int dy = j + dxy[k][1];
                         if (dx >= 0 && dx < n && dy >= 0 && dy < n && copy[dx][dy] > 0) {
                             cnt++;
                         }
                     }
-                    if (cnt < 3) { //얼음이 있는 구역이 3개미만인 경우 얼음 제거
+                    if (cnt < 3) {
                         map[i][j]--;
-                        sum--; //전체 얼음 개수도 -1
+                        sum--;
                     }
                 }
             }

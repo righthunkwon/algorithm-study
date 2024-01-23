@@ -80,9 +80,9 @@ public class Main {
 
     static void cut() {
         int n = map.length;
-        int[][] copy = new int[n][n];
+        int[][] t = new int[n][n];
         for (int i = 0; i < n; i++) {
-            copy[i] = Arrays.copyOf(map[i], n);
+            t[i] = Arrays.copyOf(map[i], n);
         }
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -91,7 +91,7 @@ public class Main {
                     for (int k = 0; k < 4; k++) {
                         int dx = i + dxy[k][0];
                         int dy = j + dxy[k][1];
-                        if (dx >= 0 && dx < n && dy >= 0 && dy < n && copy[dx][dy] > 0) {
+                        if (dx >= 0 && dx < n && dy >= 0 && dy < n && t[dx][dy] > 0) {
                             cnt++;
                         }
                     }

@@ -17,21 +17,26 @@ public class Pro_1074_Z {
 	static int result;
 
 	private static void find(int r, int c, int N) {
-		if (r < Math.pow(2, N - 1) && c < Math.pow(2, N - 1)) { //왼위
-			if (N == 1) return;
-			find(r, c, N -1);
-		} else if (r < Math.pow(2, N - 1) && c >= Math.pow(2, N - 1)) { //오른위
-			result += Math.pow(Math.pow(2, N - 1), 2);
-			if (N == 1) return;
-			find(r, c - (int) Math.pow(2, N - 1), N -1);
-		} else if (r >= Math.pow(2, N - 1) && c < Math.pow(2, N - 1)) { //왼아래
-			result += Math.pow(Math.pow(2, N - 1), 2) * 2;
-			if (N == 1) return;
-			find(r - (int) Math.pow(2, N - 1), c, N -1);
-		} else { //오른아래
-			result += Math.pow(Math.pow(2, N - 1), 2) * 3;
-			if (N == 1) return;
-			find(r - (int) Math.pow(2, N - 1), c - (int) Math.pow(2, N - 1), N -1);
+		int size = (int) Math.pow(2, N - 1);
+		if (r < size && c < size) { // 왼위
+			if (N == 1)
+				return;
+			find(r, c, N - 1);
+		} else if (r < size && c >= size) { // 오른위
+			result += Math.pow(size, 2);
+			if (N == 1)
+				return;
+			find(r, c - size, N - 1);
+		} else if (r >= size && c < size) { // 왼아래
+			result += Math.pow(size, 2) * 2;
+			if (N == 1)
+				return;
+			find(r - size, c, N - 1);
+		} else { // 오른아래
+			result += Math.pow(size, 2) * 3;
+			if (N == 1)
+				return;
+			find(r - size, c - size, N - 1);
 
 		}
 	}

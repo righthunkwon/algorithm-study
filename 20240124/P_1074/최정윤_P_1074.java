@@ -15,7 +15,10 @@ public class Pro_1074_Z {
 	}
 
 	static int result;
-
+	//1. 구간 찾기
+	//2. 그 앞까지의 갯수 더하기
+	//3. 기준 r,c 세팅
+	//4. 블록 크기 줄여서 다시!
 	private static void find(int r, int c, int N) {
 		int size = (int) Math.pow(2, N - 1);
 		if (r < size && c < size) { // 왼위

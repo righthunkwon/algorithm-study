@@ -5,7 +5,7 @@
 <br/>
 
 ### 김세리
-문제 : 23334번 (Drunk Passenger) <br/>
+문제 : 23337번 (Drunk Passenger) <br/>
 등급 : 골드5  <br/>
 링크 : https://www.acmicpc.net/problem/23337 <br/>
 <br/>

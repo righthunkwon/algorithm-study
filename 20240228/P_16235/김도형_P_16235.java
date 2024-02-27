@@ -31,7 +31,7 @@ public class BOJ_Q_16235_나무_재테크 {
 				stack[i][j]=new Stack<Integer>();
 			}
 		}//N*N개의 우선순위큐, 스택 초기화
-
+		
 		for (int i = 0; i < M; i++) {
 			st = new StringTokenizer(br.readLine());
 			int x = Integer.parseInt(st.nextToken());
@@ -41,9 +41,7 @@ public class BOJ_Q_16235_나무_재테크 {
 		}
 
 		for (int year = 0; year < K; year++) { //K년 반복
-			
 			int deadToFeed[][]=new int[N][N]; //죽어서 양분 되는 양 저장용 배열(매년 0으로 초기화)
-			
 			for(int i=0;i<N;i++) {
 				for(int j=0;j<N;j++) {
 					while(!pq[i][j].isEmpty()) {
@@ -56,10 +54,7 @@ public class BOJ_Q_16235_나무_재테크 {
 						}  
 					}
 				}
-			}
-			//여기까지 봄 , 여름 끝
-			
-			
+			}//여기까지 봄 , 여름 끝
 			for(int i=0;i<N;i++) {
 				for(int j=0;j<N;j++) {
 					while(!stack[i][j].isEmpty()) { //가을되면 나무 번식
@@ -78,9 +73,8 @@ public class BOJ_Q_16235_나무_재테크 {
 					feed[i][j]+= (deadToFeed[i][j]+A[i][j]); //겨울되면 양분 추가
 				}
 			}
-		}//k년 
+		}//k년 반복
 		int cnt = 0; //나무 수 카운트할 변수
-		
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<N;j++) {
 				cnt+=pq[i][j].size(); //큐에 남아있는 나무 숫자 세기

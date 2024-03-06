@@ -1,5 +1,3 @@
-package _20240306;
-//https://jellyinghead.tistory.com/85
 
 import java.util.*;
 import java.io.*;

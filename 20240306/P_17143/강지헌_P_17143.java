@@ -1,9 +1,5 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Main {
 
@@ -13,23 +9,16 @@ public class Main {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
         int C = Integer.parseInt(st.nextToken());
-        int[][] arr = new int[N][M];
         int[] xx={-1,1,0,0},yy={0,0,1,-1};
+        int ans=0;
         List<Node> Q = new ArrayList<>();
-
         for (int i = 0; i < C; i++) {
             st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            int c = Integer.parseInt(st.nextToken());
-            int d = Integer.parseInt(st.nextToken());
-            int e = Integer.parseInt(st.nextToken());
-            Q.add(new Node(a - 1, b - 1, c, d-1, e));
+            int[] t = new int[5];
+            for(int j=0;j<5;j++) t[j] = Integer.parseInt(st.nextToken());
+            Q.add(new Node(t[0] - 1, t[1] - 1, t[2], t[3]-1, t[4]));
         }
-        Q.sort((o1, o2) -> {
-            return o2.z - o1.z;
-        });
-        int ans = 0;
+        Q.sort((o1, o2) -> o2.z - o1.z);
         for (int i = 0; i < M; i++) {
             int min = Integer.MAX_VALUE, mx = -1;
             for (int j = 0; j < Q.size(); j++) {
@@ -46,14 +35,16 @@ public class Main {
             boolean[][] map = new boolean[N][M];
             for (int j = 0; j < Q.size(); j++) {
                 Node t = Q.get(j);
-                int dx=t.x+xx[t.d]*(t.s%((N-1)*2)),dy=t.y+yy[t.d]*(t.s%((M-1)*2));
+                int dx=t.x+xx[t.d]*t.s,dy=t.y+yy[t.d]*t.s;
                 while(dx<0 || dx>=N) {
-                    if(dx<0) { t.d=1-t.d; dx=Math.abs(dx); }
-                    if(dx>=N) { t.d=1-t.d; dx = (N*2-2)-dx; }
+                    t.d=1-t.d;
+                    if(dx<0) dx=Math.abs(dx);
+                    else dx = (N*2-2)-dx;
                 }
                 while(dy<0 || dy>=M) {
-                    if(dy<0) { t.d=5-t.d; dy=Math.abs(dy); }
-                    if(dy>=M) { t.d=5-t.d; dy = (M*2-2)-dy; }
+                    t.d=5-t.d;
+                    if(dy<0) dy=Math.abs(dy);
+                    else dy = (M*2-2)-dy;
                 }
                 if(map[dx][dy]) chk[j]=true;
                 map[dx][dy]=true;
@@ -70,7 +61,6 @@ public class Main {
 
 class Node {
     int x, y, s, d, z;
-
     Node(int x, int y, int s, int d, int z) {
         this.x = x;
         this.y = y;

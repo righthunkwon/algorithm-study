@@ -32,7 +32,7 @@ public class BOJ_Q17143_낚시왕 {
 		int[][] map = new int[R + 1][C + 1]; // (1,1) ~ (R,C)의 맵 생성
 		Map<Integer, Shark> sharks = new HashMap<>();
 
-		int reftShark = M; // 남은 상어 수 카운트용 => 이동할 때
+		
 		int eatenShark = 0; // 먹힌 상어 수 => 한번 이동하고 먹힌 상어 수 임시 저장용 => 마지막 상어 이동 후 매번 초기화 필요
 
 		// 상어 입력

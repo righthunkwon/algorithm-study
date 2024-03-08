@@ -49,7 +49,7 @@
     <td align="center"><a href="https://github.com/hajaeryul"><b>hajaeryul</b></a></td>
     <td align="center"><a href="https://github.com/jungyounn"><b>jungyounn</b></a></td>
     <td align="center"><a href="https://github.com/onid057"><b>onid057</b></a></td>
-    <td align="center"><a href="https://github.com/onid057"><b>FezzK</b></a></td>
+    <td align="center"><a href="https://github.com/FezzK"><b>FezzK</b></a></td>
   </tr>
   <tr> 
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>

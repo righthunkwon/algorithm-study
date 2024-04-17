@@ -15,6 +15,7 @@ public class Main {
 		int[][] dy = new int[N][10001];
 		int ans = Integer.MAX_VALUE;
 		for (int j = c[0]; j <= 10000; j++) dy[0][j] = m[0];
+		if(m[0]>=M) ans=c[0];
 		for (int i = 1; i < N; i++) {
 			for (int j = 0; j <= 10000; j++) {
 				if (j >= c[i]) dy[i][j] = Math.max(dy[i - 1][j], dy[i - 1][j - c[i]] + m[i]);

@@ -23,7 +23,8 @@
   <tr>
     <td>언어</td>
     <td>
-      <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" />   
+      <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" />
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
     </td>
   </tr>
 </table>
@@ -34,28 +35,34 @@
 
 <table>
  <tr>
-    <td align="center"><a href="https://github.com/righthunkwon"><img src="https://avatars.githubusercontent.com/u/114549688?v=4" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/ehgud619"><img src="https://avatars.githubusercontent.com/u/139290855?v=4" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/slside"><img src="https://avatars.githubusercontent.com/u/132821972?v=4" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/hajaeryul"><img src="https://avatars.githubusercontent.com/u/113097210?v=4" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/jungyounn"><img src="https://avatars.githubusercontent.com/u/141210401?v=4" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/onid057"><img src="https://avatars.githubusercontent.com/u/141606477?v=4" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/FezzK"><img src="https://avatars.githubusercontent.com/u/11494960?v=4" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/righthunkwon"><img src="https://avatars.githubusercontent.com/u/114549688?v=4" width="140px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/ehgud619"><img src="https://avatars.githubusercontent.com/u/139290855?v=4" width="125px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/slside"><img src="https://avatars.githubusercontent.com/u/132821972?v=4" width="125px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/hajaeryul"><img src="https://avatars.githubusercontent.com/u/113097210?v=4" width="140px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/jungyounn"><img src="https://avatars.githubusercontent.com/u/141210401?v=4" width="125px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/onid057"><img src="https://avatars.githubusercontent.com/u/141606477?v=4" width="125px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/FezzK"><img src="https://avatars.githubusercontent.com/u/11494960?v=4" width="125px;" alt=""></a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/righthunkwon"><b>righthunkwon</b></a></td>
     <td align="center"><a href="https://github.com/ehgud619"><b>ehgud619</b></a></td>
     <td align="center"><a href="https://github.com/slside"><b>slside</b></a></td>
-    <td align="center"><a href="https://github.com/hajaeryul"><b>hajaeryul</b></a></td>
+    <td align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/hajaeryul"><b>hajaeryul</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
     <td align="center"><a href="https://github.com/jungyounn"><b>jungyounn</b></a></td>
     <td align="center"><a href="https://github.com/onid057"><b>onid057</b></a></td>
     <td align="center"><a href="https://github.com/FezzK"><b>FezzK</b></a></td>
   </tr>
   <tr> 
+    <td align="center">
+      <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" />
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
+    </td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
-    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
-    <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" />
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
+    </td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>
     <td align="center"><img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /></td>

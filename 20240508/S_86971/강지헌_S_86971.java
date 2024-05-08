@@ -16,7 +16,7 @@ class Solution {
     }
     private int dfs(int t) {
         vi[t] = true;
-        for(int i = 0; i < map.length; ++i) {
+        for(int i = 0; i < map.length; i++) {
             if(vi[i] || map[t][i] == 0) continue;
             c[t] += dfs(i);
         }

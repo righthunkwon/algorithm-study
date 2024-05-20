@@ -1,4 +1,4 @@
-문제: 1322265번 (롤케이크 자르기) <br/>
+문제: 132265번 (롤케이크 자르기) <br/>
 등급: Level 2 <br/>
 링크: https://school.programmers.co.kr/learn/courses/30/lessons/132265 <br/>
  <br/>

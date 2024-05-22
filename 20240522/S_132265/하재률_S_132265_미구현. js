@@ -1,0 +1,19 @@
+function solution(topping) {
+    let answer = 0;
+    
+    for(let i = 1; i < topping.length; i++){
+        let arr1 = topping.slice(0, i);
+        let arr2 = topping.slice(i);
+        
+        const set1 = new Set(arr1);
+        const newArr1 = [...set1];
+        // console.log(i,newArr1)
+        const set2 = new Set(arr2);
+        const newArr2 = [...set2];
+        // console.log(i,newArr2)
+        
+        if(newArr1.length === newArr2.length) answer++;
+    }
+    
+    return answer;
+}

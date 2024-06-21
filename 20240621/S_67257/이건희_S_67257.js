@@ -8,7 +8,7 @@ function solution(expression) {
 }
 
 function calculate(a, b, operator) {
-    // 2단계 연산자 어떻게 작동할지 설정
+    // 2단계 연산자 어떻게 작동할지 설정, eval은 쓰면 안되서
     switch (operator) {
         case '+': return a + b;
         case '-': return a - b;

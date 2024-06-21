@@ -1,18 +1,4 @@
-// 100-200*300-500+20
-// [100,200,300,500,20]
-// [-,*,-,+]
-// [100,60000,null,500,20]
-// [-,null,-,+]
-// [-59900,null,null,500,20]
-// [null,null,-,+]
-// [-59900,null,null,520,null]
-// [null,null,-,+]
-// [-60420,null,null,null,null]
-// [null,null,null,null]
-// 연산자 배열이 전부 null이므로
-// 결과 값 Math.abs(-60420) = 60420 출력
-
-// 결론 dfs로 풀기
+// dfs로 풀기
 
 function solution(expression) {
     // 1단계 숫자와 연산자 배열로 분리 => match 함수를 쓰는 법도 있다.

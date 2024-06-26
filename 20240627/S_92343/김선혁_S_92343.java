@@ -47,15 +47,10 @@ class Solution {
         
         // 현재위치는 제거해야함
         ArrayList<Integer> tmp = new ArrayList<>(list); // list 복제
-        int index = tmp.indexOf(idx);
-        if(index != -1){
-         tmp.remove(index);
-        }
-        
-        if (ar[idx] != null) {
-            for (int i = 0; i < ar[idx].size(); i++) {
-                tmp.add(ar[idx].get(i));
-            }
+        tmp.remove(tmp.indexOf(idx));
+        // idx 점에서 뻗어나간 모든 번호 tmp에 추가
+        for (int i = 0; i < ar[idx].size(); i++) {
+            tmp.add(ar[idx].get(i));
         }
       
         // 모든 점 dfs

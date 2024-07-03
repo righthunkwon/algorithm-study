@@ -3,7 +3,7 @@
 function solution(info, edges) {
     // 각 노드의 자식 노드를 저장할 그래프 초기화
     const graph = Array.from({length: info.length}, () => []);
-    // 각 노드의 연결 관계를 그래프에 저장
+    // 각 노드의 연결 관계를 그래프에 저장, 햇갈리니까 명확하게 변수 지정
     edges.forEach(([parent, child]) => {
         graph[parent].push(child);
     });

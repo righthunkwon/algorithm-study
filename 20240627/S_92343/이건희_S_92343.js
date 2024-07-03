@@ -1,5 +1,50 @@
 // 문제에서 대놓고 BFS하라고 정해준 문제
 // 중간에 정지 시킬 조건 도 주어졌다.
+// [ver2] BFS 객체 테케 17, 18.60ms
+function solution(info, edges) {
+    // 노드 연결 관계를 그래프로 구성
+    const graph = createGraph(info.length, edges);
+    // BFS를 사용하여 최대 양의 수 계산
+    return bfs(graph, info);
+}
+// 그래프 생성 함수
+function createGraph(nodeCount, edges) {
+    const graph = Array.from({length: nodeCount}, () => []);
+    edges.forEach(([parent, child]) => {
+        graph[parent].push(child);
+    });
+    return graph;
+}
+// BFS 실행 함수
+function bfs(graph, info) {
+    let maxSheep = 0;
+    const queue = [{ node: 0, sheep: 0, wolf: 0, available: new Set(graph[0]) }];
+
+    while (queue.length > 0) {
+        const { node, sheep, wolf, available } = queue.shift();
+        const newSheep = sheep + (info[node] === 0 ? 1 : 0);
+        const newWolf = wolf + (info[node] === 1 ? 1 : 0);
+
+        if (newWolf >= newSheep) continue;
+        maxSheep = Math.max(maxSheep, newSheep);
+
+        let nextAvailable = new Set(available);
+        nextAvailable.delete(node);
+        graph[node].forEach(child => nextAvailable.add(child));
+
+        nextAvailable.forEach(next => {
+            queue.push({
+                node: next,
+                sheep: newSheep,
+                wolf: newWolf,
+                available: new Set(nextAvailable)
+            });
+        });
+    }
+
+    return maxSheep;
+}
+// [ver1] DFS 테케 17 5.95ms
 function solution(info, edges) {
     // 각 노드의 자식 노드를 저장할 그래프 초기화
     const graph = Array.from({length: info.length}, () => []);

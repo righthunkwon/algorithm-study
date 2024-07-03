@@ -1,4 +1,4 @@
-// 효율성 테스트 2번에서 터짐
+// 효율성 테스트 2번에서 터짐 => 다시 돌리니까 성공
 function solution(n, stations, W) {
     let result = 0;
     let coverage = 2 * W + 1;

@@ -68,7 +68,7 @@ class Solution {
 
         return "impossible";
     }
-    // 범위 벗어나는 것 방지하는 함수
+    // 범위 벗어나는 것 방지하는 함수 - 깔끔하게 하고 싶어서 분리
     private boolean isValid(int n, int m, int x, int y) {
         return x >= 1 && x <= n && y >= 1 && y <= m;
     }

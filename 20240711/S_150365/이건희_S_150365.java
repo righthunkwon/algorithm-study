@@ -42,7 +42,7 @@ public class Solution {
             y--;
             answer.append("l");
         }
-        // k가 남을 때 이걸로 태운다, 위치는 바뀌면 안되어서 우좌
+        // 맨하튼 거리 빼고 남은 k를 이걸로 태운다, 위치는 바뀌면 안되어서 우좌
         // Q. 왜 상하는 안되나?
         // 우좌 반복 이동
         while ((k - move) > calcDist(x, y, r, c)) {
@@ -50,7 +50,7 @@ public class Solution {
             answer.append("rl");
         }
 
-        // 위치 조정, 남은 move는 신경 쓰지 않는다.
+        // 위치 조정
         if (x < r) answer.append("d".repeat(r - x));
         if (y > c) answer.append("l".repeat(y - c));
         if (y < c) answer.append("r".repeat(c - y));

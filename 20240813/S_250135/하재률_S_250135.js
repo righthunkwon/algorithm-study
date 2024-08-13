@@ -1,63 +1,60 @@
-function solution(land) {
-    const [n, m] = [land.length, land[0].length];
+function solution(h1, m1, s1, h2, m2, s2) {
+    var answer = 0;
     
-    const dx = [-1, 1, 0, 0], dy = [0, 0, -1, 1];
-    const oil = Array.from(Array(n), () => Array(m).fill(-1));
-    const chk = Array.from(Array(n), () => Array(m).fill(false));
-    let num = 0; // 오일번호
-    const map = new Map(); // 오일번호붙이기 + 크기
+    // 초로 변환
+    const getSecond = (h, m, s) => {
+        return h * 3600 + m * 60 + s;
+    }
     
-    const bfs = (x, y, id) => {
-        const q = [[x, y]];
-        let tmp = 1;
-        chk[x][y] = true;
+    // 각도계산
+    // 1초에 초침: 6도, 분침: 1/10도, 시침: 1/120도
+    // 1분에 분침: 6도, 시침: 1/2도
+    // 1시간에 시침: 30도
+    const getDegree = (s) => {
+        let hour = Math.floor(s / 3600);
+        if(hour >= 12) hour = hour - 12;
+        const minute = Math.floor(s % 3600 / 60);
+        const second = s%3600%60;
         
-        while(q.length) {
-            const [a, b] = q.shift();
-            // 오일번호 저장
-            oil[a][b] = num;
-            
-            for(let d = 0; d < 4; d++) {
-                const nx = a + dx[d];
-                const ny = b + dy[d];
-
-                if(nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
-                if(chk[nx][ny] || !land[nx][ny]) continue;
-                
-                q.push([nx, ny]);
-                chk[nx][ny] = true;
-                tmp++;
-            }    
-        }
-        return tmp;
+        let hourDegree = hour * 30 + minute * 1/2 + second * 1/120;
+        if(hourDegree >= 360) hourDegree = hourDegree - 360;
+        let minuteDegree = minute * 6 + second * 1/10;
+        let secondDegree = second * 6;
+        
+        return [hourDegree, minuteDegree, secondDegree];
     }
     
-    for(let i = 0; i < n; i++) {
-        for(let j = 0; j < m; j++) {
-            if(!land[i][j] || chk[i][j]) continue;
-            const cnt = bfs(i, j, num);
-            map.set(num, cnt);
-            num++;
-        }
+    
+    // 시침과 겹치나요
+    const overlapHour = (s) => {
+        const [curHour, , curSecond] = getDegree(s);
+        const [nextHour, , nextSecond] = getDegree(s+1);
+        if(curHour > 354 && curSecond === 354) return true;
+        return curHour > curSecond && nextHour < nextSecond;
     }
     
-    // console.log(oil)
-    // console.log(map)
-    
-    // 세로 한 줄씩 검사
-    let ans = 0;
-    for(let i = 0; i < m; i++) {
-        let visited =[];
-        let sum = 0;
-        for(let j = 0; j < n; j++) {
-            if(oil[j][i] >= 0 && !visited.includes(oil[j][i])) {
-                const id = oil[j][i];
-                visited.push(id);
-                sum += map.get(id);
-            }
-        }
-        ans = ans < sum ? sum : ans;
+    // 분침과 겹치나요
+    const overlapMinute = (s) => {
+        const [, curMinute, curSecond] = getDegree(s);
+        const [, nextMinute, nextSecond] = getDegree(s+1);
+        if(curMinute > 354 && curSecond === 354) return true;
+        return curMinute > curSecond && nextMinute < nextSecond;
     }
     
-    return ans;
+    const st = getSecond(h1, m1, s1);
+    const end = getSecond(h2, m2, s2);
+    
+    // 0초 또는 12시 0분 0초
+    if (st === 0 || st === 43200) answer++;
+    
+    for(let i = st; i < end; i++) {
+        const [nh, nm, ns] = getDegree(i+1);
+        
+        if(overlapHour(i) && overlapMinute(i)) {
+            if(nh === nm) answer++;
+            else answer += 2;
+        } else if(overlapHour(i) || overlapMinute(i)) answer++;
+    }
+    
+    return answer;
 }

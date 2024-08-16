@@ -7,7 +7,11 @@ import java.util.stream.*;
 class Solution {
     public String solution(int[] numbers) {
         Integer[] numArray = Arrays.stream(numbers).boxed().toArray(Integer[]::new);
-    
+        // Integer[] numArray = new Integer[numbers.length];
+        // for (int i = 0; i < numbers.length; i++) {
+        //     numArray[i] = numbers[i];
+        // }
+        // 람다식
         Arrays.sort(numArray, (a, b) -> {
             long ab = Long.parseLong("" + a + b);
             long ba = Long.parseLong("" + b + a);

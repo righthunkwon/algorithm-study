@@ -13,10 +13,15 @@ class Solution {
         // }
         // 람다식
         Arrays.sort(numArray, (a, b) -> {
-            long ab = Long.parseLong("" + a + b);
-            long ba = Long.parseLong("" + b + a);
-            return Long.compare(ba, ab);// 이거 생각하면 끝
+            int ab = Integer.parseInt("" + a + b);
+            int ba = Integer.parseInt("" + b + a);
+            return Integer.compare(ba, ab);
         });
+        // Arrays.sort(numArray, (a, b) -> {
+        //     long ab = Long.parseLong("" + a + b);
+        //     long ba = Long.parseLong("" + b + a);
+        //     return Long.compare(ba, ab);// 이거 생각하면 끝
+        // });
 
         if (numArray[0] == 0) {
             return "0";

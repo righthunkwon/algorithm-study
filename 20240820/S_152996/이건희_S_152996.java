@@ -4,14 +4,13 @@ class Solution {
         long[] count = new long[1001];
         long[] torque = new long[4001];
         for (int weight : weights) {
-            long temp = count[weight];
-            answer += temp;
+            long tmp = count[weight];
+            answer += tmp;
             for(int i = 2; i <= 4; i++){
                 int num = weight * i;
-                if (temp > 0) {
-                    answer += torque[num] - temp;
-                }else{
-                    answer += torque[num];
+                answer += torque[num];
+                if (tmp > 0) {
+                    answer -= tmp;
                 }
                 torque[num]++;
             }

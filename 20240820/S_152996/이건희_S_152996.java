@@ -1,3 +1,10 @@
+// 문제: 152996번 (시소 짝꿍)
+// 등급: Level 2
+// 링크: https://school.programmers.co.kr/learn/courses/30/lessons/152996
+// [풀이] 
+// 100,000 N2완탐으로는 불가능
+// 토크로 환산해서 N:1 경우의 수 누적으로 풀기
+// 2차 코드
 class Solution {
     public long solution(int[] weights) {
         long result = 0;
@@ -15,6 +22,7 @@ class Solution {
         return result;
     }
 }
+// 1차 코드
 class Solution {
     public long solution(int[] weights) {
         long answer = 0;

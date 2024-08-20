@@ -24,11 +24,11 @@ class Solution {
         Pattern urlPattern = Pattern.compile("<meta property=\"og:url\" content=\"(.*?)\"/>");
         Pattern linkPattern = Pattern.compile("<a href=\"(.*?)\">");
         word = word.toLowerCase(); // 입력 단어에 대문자가 포함되는 경우가 있어서 소문자로 변환
-        // 페이지 정보를 파싱하여 페이지 객체 생성 및 저장
+        // 페이지 객체 생성 및 저장
         for (int i = 0; i < pages.length; i++) {
             // URL 추출
             Matcher urlMatcher = urlPattern.matcher(pages[i]);
-                if (urlMatcher.find()) {
+                if (urlMatcher.find()) {// 이거 안해주면 에러남
                 String url = urlMatcher.group(1);
                 Page page = new Page(url);
                 // 기본 점수 계산
@@ -40,7 +40,7 @@ class Solution {
                     page.outLink.add(outLink);
                 }
                 page.linkCount = page.outLink.size(); // 외부 링크 수 계산
-                pageMap.put(url, page); // 페이지 정보를 Map에 저장
+                pageMap.put(url, page); // 페이지 정보를 Map에 저장 => 링크 점수 갱신 용
             }
         }
 

@@ -47,7 +47,6 @@ class Solution {
         // 링크 점수 계산
         for (Page page : pageMap.values()) {
             double linkScore = (page.linkCount == 0) ? 0 : (double) page.baseScore / page.linkCount;
-
             // 매칭 점수 계산을 위한 링크 점수 갱신
             for (String outLink : page.outLink) {
                 if (pageMap.containsKey(outLink)) {

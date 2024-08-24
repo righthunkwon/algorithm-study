@@ -16,10 +16,8 @@ class Solution {
         while (maxIdx >= minIdx) {
             if (people[maxIdx] + people[minIdx] <= limit) {
                 minIdx++;
-                maxIdx--;
-            } else {
-                maxIdx--;
             }
+            maxIdx--;
             answer++;
         }
         return answer;

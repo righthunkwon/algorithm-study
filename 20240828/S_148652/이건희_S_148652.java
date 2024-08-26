@@ -10,6 +10,7 @@
 // DP? 분할정복?
 // N3 = N2,N2,0,N2,N2
 // N4 = N3,N3,0,N3,N3
+// 00000 => 0로 압축 가능
 class Solution {
     public int solution(int n, long l, long r) {
         return cantor(n, l - 1, r - 1);
@@ -17,16 +18,16 @@ class Solution {
     private int cantor(int n, long l, long r) {
         if (n == 0) return (l <= 0 && 0 <= r) ? 1 : 0;
 
-        long length = (long) Math.pow(5, n - 1);
+        long length = (long) Math.pow(5, n - 1);// 5등분 한 길이
         int count = 0;
 
         for (int i = 0; i < 5; i++) {
             long newL = l - i * length;
             long newR = r - i * length;
             if (newR >= 0 && newL < length) {
-                if (i == 2) continue;
+                if (i == 2) continue;// => 가운데 0집합
                 else {
-                    newL = Math.max(newL, 0);
+                    newL = Math.max(newL, 0);// 좌표 조정
                     newR = Math.min(newR, length - 1);
                     count += cantor(n - 1, newL, newR);
                 }

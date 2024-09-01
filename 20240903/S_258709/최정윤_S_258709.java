@@ -3,7 +3,7 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[][] dice) {
-        //완탐+백트래킹해야할 것 같은디?
+        //완탐+백트래킹해야할 것 같은디? -> 시간초과 ,,, 
         //먼저 n/2개 셀렉
         //6의 10제곱 * 10C5=60,466,176*252 엥 시간초과 안나나?
         this.dice=dice;

@@ -8,6 +8,13 @@ import java.util.*;
 //dfs통해서 N-1부터 갈건지 N-2부터 갈건지 정하고
 //bfs 돌리기로 ... 하긴 했음 
 class Solution {
+    static int r, c, min;
+    static int[] turn,dr,dc;
+    static boolean[] s_visited,card;
+    static Queue<Cursor> q;
+    static int[][] board;
+    static boolean[][] visited;
+    static List<Cursor>[] number;
     static class Cursor{
         int r,c,depth;
         public Cursor(int r,int c,int depth){
@@ -48,13 +55,7 @@ class Solution {
         int answer = min+cnt ;
         return answer;
     }
-    static int r, c, min;
-    static int[] turn,dr,dc;
-    static boolean[] s_visited,card;
-    static Queue<Cursor> q;
-    static int[][] board;
-    static boolean[][] visited;
-    static List<Cursor>[] number;
+
     public static void select(int sidx){
         if(sidx>=turn.length){
             // System.out.println("배열"+Arrays.toString(turn));

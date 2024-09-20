@@ -21,13 +21,13 @@ class Solution {
         // 적다면 그 바위 제거해서 제거된 바위가 2개나올때까지 쭉 돌림
         
         // 바위가 2개보다 많다면 숫자가 줄어야함
-        int left = 0;
+        int left = 1;
         int right = distance;
         while(true){
             int mid =(left + right)/2;
             // mid값을 중심으로 제거된 바위의 개수 count
             int cnt = solve(distance, rocks, mid);
-            if(cnt> 2){
+            if(cnt> n){
                 right = mid -1;
             }
             else {
@@ -40,6 +40,7 @@ class Solution {
                 break;
             }
         }
+        
         
         return answer;
     }

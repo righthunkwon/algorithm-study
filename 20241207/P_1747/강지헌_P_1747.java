@@ -1,11 +1,11 @@
 import java.io.*;
 public class Main {
-	static boolean prime[] = new boolean[1004002];
+	static boolean prime[] = new boolean[1000001];
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
 		prime();
-		for (int i = n; i < 1004000; i++) {
+		for (int i = n; i < 1000001; i++) {
 			if (!prime[i]) {
 				String str = String.valueOf(i);
 				StringBuffer sb = new StringBuffer(str);

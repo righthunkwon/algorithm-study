@@ -3,12 +3,12 @@
 링크: https://www.acmicpc.net/problem/5582 <br/>
  <br/>
 
-문제: 11404번 (플로이) <br/>
+문제: 11404번 (플로이드) <br/>
 등급: 골드4 <br/>
 링크: https://www.acmicpc.net/problem/11404 <br/>
  <br/>
 
-문제: 1947번 (선물 전) <br/>
+문제: 1947번 (선물 전달) <br/>
 등급: 골드3 <br/>
 링크: https://www.acmicpc.net/problem/1947 <br/>
  <br/>

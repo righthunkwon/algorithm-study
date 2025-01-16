@@ -1,5 +1,8 @@
 import java.io.*;
 import java.util.*;
+//최대 4개여서 for문 사용가능
+//순서 상관없다고 했으니까 i<=j<=k<=l로 해야 시간초과 안남
+//dp로 어케푸는지 ,.... 
 public class Main{
 public static void main(String[] args){
     Scanner sc= new Scanner(System.in);

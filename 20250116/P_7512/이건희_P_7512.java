@@ -44,7 +44,7 @@ public class Main {
             System.out.println(result);
         }
 
-        sc.close(); // 스캐너 닫기
+        sc.close();
     }
 
     public static int find(int[] input, List<Integer> primes, Set<Integer> primeSet) {
@@ -67,7 +67,7 @@ public class Main {
                 windowSum = windowSum - primes.get(i - 1) + primes.get(i + n - 1); // 윈도우 이동
                 if (windowSum > LIMIT) break; // 합이 범위를 초과하면 종료
                 if (primeSet.contains(windowSum)) { // 합이 소수인지 확인
-                    currentSums.add(windowSum);
+                    currentSums.add(windowSum);// 이거 안하면 2번째 테케에서 터짐
                 }
             }
 

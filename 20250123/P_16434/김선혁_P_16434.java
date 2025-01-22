@@ -37,7 +37,7 @@ public class AlgoApplication{
         long ans = 0;
         // 이제 진행해보자
         long left = 0;
-        long right = 1000000L * 1000000; // 때리는 횟수 백만 * 적의 체력 백만을 고려
+        long right = (long) 1e18; // 때리는 횟수 백만 * 적의 체력 백만을 고려 ->  백만 * 백만 +1 해도 틀림
         while(true){
             long mid = (right + left)/2;
             // mid를 가지고 게임 돌려보자

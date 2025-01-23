@@ -1,4 +1,4 @@
-문제: 3933번 (IPv6) <br/>
+문제: 3107번 (IPv6) <br/>
 등급: 실버1 <br/>
 링크: https://www.acmicpc.net/problem/3107 <br/>
  <br/>

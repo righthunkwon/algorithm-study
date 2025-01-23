@@ -1,38 +1,38 @@
 // 방법1 => 누적, 데미지를 일종의 리버스 체력으로 보면 선형으로 풀이 가능
-// import java.util.*;
+import java.util.*;
 
-// public class Main {
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-//         int n = sc.nextInt();
-//         long HATK = sc.nextLong();
-//         int[][] map = new int[n][3];
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        long heroAtk = sc.nextLong();
+        int[][] map = new int[n][3];
 
-//         for (int i = 0; i < n; i++) {
-//             map[i][0] = sc.nextInt();
-//             map[i][1] = sc.nextInt();
-//             map[i][2] = sc.nextInt();
-//         }
+        for (int i = 0; i < n; i++) {
+            map[i][0] = sc.nextInt();
+            map[i][1] = sc.nextInt();
+            map[i][2] = sc.nextInt();
+        }
 
-//         long totalDamage = 0;
-//         long heroAtk = HATK;
+        long cur = 0;
+        long max = 0;
+        for (int i = 0; i < n; i++) {
+            if (map[i][0] == 1) {
+                long monAtk = map[i][1];
+                long monHp = map[i][2];
+                cur += monAtk * ((monHp / heroAtk) - (monHp % heroAtk == 0 ? 1 : 0));
+                max = Math.max(max, cur);
+            } else if (map[i][0] == 2) {
+                long atk = map[i][1];
+                long heal = map[i][2];
+                heroAtk += atk;
+                cur = Math.max(0, cur - heal);
+            }
+        }
 
-//         for (int i = 0; i < n; i++) {
-//             if (map[i][0] == 1) {
-//                 long monAtk = map[i][1];
-//                 long monHp = map[i][2];
-//                 long attackCount = (monHp + heroAtk - 1) / heroAtk;
-//                 totalDamage += (attackCount - 1) * monAtk;
-//             } else if (map[i][0] == 2) {
-//                 long atkIncrease = map[i][1];
-//                 long heal = map[i][2];
-//                 heroAtk += atkIncrease;
-//                 totalDamage = Math.max(0, totalDamage - heal);
-//             }
-//         }
-//         System.out.println(totalDamage + 1);
-//     }
-// }
+        System.out.println(max + 1);
+    }
+}
 // 방법2 => 구현+이분탐색
 import java.util.*;
 
@@ -92,12 +92,12 @@ public class Main {
     }
     public static Hero monster(Hero hero, int monHp, int monAtk) {
         long attackCount = (long) Math.ceil((double) monHp / hero.heroAtk);
-        long totalDamage = (attackCount - 1) * monAtk;
+        long totalage = (attackCount - 1) * monAtk;
 
-        if (hero.heroHp <= totalDamage) {
+        if (hero.heroHp <= totalage) {
             hero.heroHp = 0;
         } else {
-            hero.heroHp -= totalDamage;
+            hero.heroHp -= totalage;
         }
         return hero;
     }

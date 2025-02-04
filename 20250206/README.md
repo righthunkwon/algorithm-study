@@ -9,7 +9,7 @@
  <br/>
 
 문제: 2478번 (자물쇠) <br/>
-등급: 골드1 <br/>
+등급: 플래티넘5 <br/>
 링크: https://www.acmicpc.net/problem/2478 <br/>
  <br/>
 

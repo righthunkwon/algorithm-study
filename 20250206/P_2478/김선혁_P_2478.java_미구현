@@ -1,0 +1,122 @@
+1 2 3 4 5 6 7 8 9 10
+- 4
+5 6 7 8 9 10 1 2 3 4
+6 8 
+5 6 7 8 9 2 1 10 3 4  // - 4 - 6 
+
+9 2 1 10 3 4 5 6 7 8  //   2 4
+
+1 10 3 4 5 6 7 8 9 2 //   9 1 (1)  -> 2 1 10 3 4 5 6 7 8 9
+
+package com.example.algo;
+import java.util.*;
+
+public class AlgoApplication{
+
+static int N;
+static int[] arr;
+static int ans1 , ans2 , ans3, ans4;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //1 .왼쪽으로 밀기
+        //2. 구간 뒤집기
+        //3. 왼쪽으로 밀기
+
+        // 잠긴 자물쇠의 마지막 상태를 입력으로 받으면
+        // 3회의 동작이 어떤 동작이었는지 찾기
+        // ..?
+
+        // 우선적으로 뒤집기를 먼저 찾아서 해당 숫자들을 뒤집고
+        // 한번 더 스캔해서 뒤집은 숫자가 없어 질 때까지 한다.
+        // 그 후에는 1을 찾아 1의 위치에서 맨 끝까지의 거리를 밀어서 다시 1의 위치에 오게 하고
+        // 이것을 반복해서 맨앞에서부터 1 2  3 4 5...가 각각 자리에 있을 떄까지 반복
+
+        N =sc.nextInt();
+        arr = new int[N];
+        for(int i =0; i<N; i++){
+            arr[i] = sc.nextInt();
+        }
+        // 문제에서는 순서가 왼쪽밀기, 뒤집기, 왼쪽밀기라 했으므로
+        // 왼쪽밀기가 가능한 부분부터 찾자
+        // 첫숫자에서 시작해서
+        ans1 = 0;
+        ans2 = 0;
+        ans3 = 0;
+        ans4 = 0;
+        // 우선뒤집기를 먼저 찾아서 해당 숫자를 기억해 놓자
+        int reverse1 = 0;
+        int reverse2 = 0;
+        int num = arr[1];
+        if(num ==1){
+            num += N;
+        }
+        // 1. 증가한다면 뒤집어지지 않은 상태
+        // 2. 감소한다면 해당 숫자는 뒤집어진 상태
+        // 3. 상관이 없는 숫자라면 2가지 경우 - 해당숫자가 뒤집어진 끝점이거나 다음 숫자가 뒤집어진 상태
+        // 3- 1 이라면
+
+        // 우선 감소하는 부분 찾기
+        int index1 = 0;
+        int index2 = 0;
+        a : while(true){
+            int num1 = arr[index1%=N];
+            index1 ++;
+            int num2 = arr[index1%=N];
+            // 뒤집기 시작점
+            if(num1 -1 == num2%N){ // 1과 10 , 10과 9를 생각
+                reverse1 = num1;
+                index2 = index1;
+                index1 --; // 시작점은 -1 해야한다.
+                // 만약 시작했던 점이 이미 뒤집어진 곳일 수도 있으므로
+                // 그 전에 배열도 확인해봐야한다.
+                if(index1 == 0){
+                    for(int j=N-1; j>=0; j--){
+                        if(arr[j] -1 == reverse1%N){
+                            reverse1 = arr[j];
+                            index1 = j;
+                            continue;
+                        }
+                        break;
+                    }
+                }
+                // 뒤집기 시작점의 index를 저장해놓고
+                // 그 숫자를 기준으로 뒤집기가 끝나는 지점을 찾자
+                while(true){
+                    num1 = arr[index2%=N];
+                    index2 ++;
+                    num2 = arr[index2%=N];
+                    // num1 까지가 뒤집어진 부분이다.
+                    if(num1 -1 != num2%N){
+                        reverse2 = num2;
+                        index2 --;
+                        break a;
+                    }
+                }
+            }
+
+
+        }
+        // 우선 저 숫자들을 뒤집고 만약 index1이 더 크다면 index2 +1만큼을 왼쪽으로 땡겨오자
+        int tmp = 0;
+        int tmpNum = 0;
+        if(index1 > index2){
+            // index1 만큼 떙기고 다시 숫자찾아서 해보자
+            ans4 = N - index1;
+            tmp = index1-1;
+            tmpNum = arr[index1-1];
+        }
+        else{
+            ans4 = index2 +1;
+            tmp = index
+        }
+        index1 += ans4;
+        index2 += ans4;
+        // 두개 모두 ans4만큼 이동하고 N으로 나눈 후에 +1해서 출력
+        ans2 = index1%N +1;
+        ans3 = index2%N +1;
+        int tmp = arr[index2+1]; // 정상인 숫자
+        ans1 =
+
+    }
+
+}

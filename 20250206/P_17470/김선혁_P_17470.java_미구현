@@ -1,0 +1,172 @@
+// 줄이는 방법 찾아봐도 모르겠다
+package com.example.algo;
+import java.util.*;
+
+public class AlgoApplication{
+
+static int N, M, R, max;
+static int[][] arr;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+         N = sc.nextInt();
+         M = sc.nextInt();
+        R = sc.nextInt();
+        arr = new int[N][M];
+
+        for(int i = 0; i < N; i++){
+            for (int j = 0; j < M; j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        // 하나씩 구현해보자..
+        // 다 구현하면 시간초과 난다..
+        for (int i = 0; i < R; i++) {
+            int a = sc.nextInt();
+            arr = process(a);
+        }
+
+        for(int i = 0; i < N; i++){
+            for(int j = 0; j < M; j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+    }
+    static int[][] process(int a) {
+        switch (a) {
+            case 1: return solve1();
+            case 2: return solve2();
+            case 3: return solve3();
+            case 4: return solve4();
+            case 5: return solve5();
+            case 6: return solve6();
+            default: return new int[0][0]; // 예외 처리 (빈 배열 반환)
+        }
+    }
+
+
+    static int[][] solve1() {
+        // 블럭 한줄씩 상하 반전
+        int[][] tmp = new int[N][M];
+        // 두개중에 최대값을 고르고 그 안에서 한줄이 얼마나 차있나 구분해야한다.
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                tmp[i][j] = arr[N-1-i][j];
+            }
+        }
+        return tmp;
+    }
+
+    static int[][] solve2() {
+        // 블럭 한줄씩 좌우 반전
+        int[][] tmp = new int[N][M];
+        for(int i = 0 ; i < N ; i++){
+            for (int j = 0; j < M; j++) {
+                tmp[i][j] = arr[i][M-1-j];
+            }
+        }
+        return tmp;
+
+    }
+    static int[][] solve3() {
+        // 블럭 오른쪽 90도 회전
+        int tmpNum = N;
+        N = M;
+        M = tmpNum;
+        int[][] tmp = new int[N][M];
+        for(int i =0; i< N ; i++){
+            for(int j = 0 ; j < M ; j++){
+                tmp[i][j] = arr[M - 1 - j][i];
+            }
+        }
+
+        return tmp;
+
+    }
+    static int[][] solve4() {
+        // 블럭 왼쪽 90도 회전
+        int tmpNum = N;
+        N = M;
+        M = tmpNum;
+        int[][] tmp = new int[N][M];
+        for(int i =0; i< N ; i++){
+            for(int j = 0 ; j < M ; j++){
+                tmp[i][j] = arr[j][N-i-1];
+            }
+        }
+        return tmp;
+
+    }
+    static int[][] solve5() {
+        // 블럭을 4개로 나눠서 옮기기
+        int[][] tmp = new int[N][M];
+        // 4개를 각각 옮겨보자
+        // 1. 밑에서 위로
+        for(int i = 0 ;i < N/2;i++){
+            for(int j = 0 ; j < M/2;j++){
+                tmp[i][j] = arr[i+N/2][j]; // 밑에꺼 글어오는과정
+            }
+        }
+        // 2. 왼쪽에서 오른쪽(1->2)
+        for(int i = 0 ;i < N/2;i++){
+            for(int j = M/2; j < M;j++){
+                tmp[i][j] = arr[i][j-M/2];
+            }
+        }
+        // 3. 위에꺼 밑으로
+        for(int i = N/2;i < N;i++){
+            for(int j = M/2; j < M;j++){
+                tmp[i][j] = arr[i-N/2][j];
+            }
+        }
+        // 4. 오른쪽꺼 왼쪽으로
+        for(int i = N/2;i < N;i++){
+            for(int j = 0 ; j<M/2;j++){
+                tmp[i][j] = arr[i][j+M/2];
+            }
+        }
+
+        return tmp;
+
+    }
+    static int[][] solve6() {
+        // 블럭을 4개로 나눠서 옮기기
+        int[][] tmp = new int[N][M];
+        // 4개를 각각 옮겨보자
+        // 1. 밑에서 위로
+        for(int i = 0 ;i < N/2;i++){
+            for(int j = 0 ; j < M/2;j++){
+                tmp[i+N/2][j] = arr[i][j]; // 밑에꺼 글어오는과정
+            }
+        }
+        // 2. 왼쪽에서 오른쪽(1->2)
+        for(int i = 0 ;i < N/2;i++){
+            for(int j = M/2; j < M;j++){
+                tmp[i][j-M/2] = arr[i][j];
+            }
+        }
+        // 3. 위에꺼 밑으로
+        for(int i = N/2;i < N;i++){
+            for(int j = M/2; j < M;j++){
+                tmp[i-N/2][j] = arr[i][j];
+            }
+        }
+        // 4. 오른쪽꺼 왼쪽으로
+        for(int i = N/2;i < N;i++){
+            for(int j = 0 ; j<M/2;j++){
+                tmp[i][j+M/2] = arr[i][j];
+            }
+        }
+
+        return tmp;
+
+    }
+
+
+
+}
+
+
+
